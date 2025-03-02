@@ -114,4 +114,25 @@ document.addEventListener('scroll', () => {
     });
 });
 
-// (Ajoutez ce code après les autres animations existantes dans script.js, comme l'animation de fond ou le défilement des formations)
+// Animation pour les objectifs
+document.addEventListener('scroll', () => {
+    const objectifItems = document.querySelectorAll('.objectif-item');
+    objectifItems.forEach(item => {
+        const rect = item.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.8) {
+            item.classList.remove('opacity-0', '-translate-x-12', 'translate-x-12');
+            item.classList.add('opacity-100', 'translate-x-0');
+        }
+    });
+});
+// Animation pour les expériences
+document.addEventListener('scroll', () => {
+    const experienceItems = document.querySelectorAll('.experience-item');
+    experienceItems.forEach(item => {
+        const rect = item.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.8) {
+            item.classList.remove('opacity-0', 'translate-y-12');
+            item.classList.add('opacity-100', 'translate-y-0');
+        }
+    });
+});
