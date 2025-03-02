@@ -22,7 +22,6 @@
     </style>
 </head>
 <body class="bg-gray-900 text-white relative overflow-x-hidden">
-    <!-- Canvas pour l'animation de fond -->
     <canvas id="backgroundCanvas" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
 
     <!-- Barre de navigation -->
@@ -41,33 +40,108 @@
             </nav>
         </div>
     </header>
-
-    <!-- Section d'introduction avec animation dynamique dans le sous-titre -->
-    <section class="pt-32 text-center relative z-10">
-        <h1 id="static-title" class="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-blue-500 to-cyan-400 text-transparent bg-clip-text mb-4">Bienvenue sur mon Portfolio</h1>
-        <p id="typing-subtitle" class="text-lg text-gray-300 mt-4 max-w-2xl mx-auto"></p>
-    </section>
-
-    <!-- Contenu principal -->
-    <main class="container mx-auto px-6 py-16 flex flex-col md:flex-row items-center justify-between space-y-10 md:space-y-0 md:space-x-10 relative z-10">
-        <img src="images/cdd.png" alt="Mon image" class="w-full md:w-80 h-auto rounded-full shadow-lg transform transition duration-500 hover:rotate-6 hover:shadow-cyan-500/50">
-        <div class="flex flex-col space-y-6 text-center md:text-left">
-            <h2 class="text-5xl font-bold text-cyan-400">Coura Dieye Diop</h2>
-            <a href="cv.pdf" download class="bg-cyan-500 text-white px-6 py-3 rounded-full shadow-md hover:bg-cyan-600 transition duration-300 inline-flex items-center space-x-2 mx-auto md:mx-0 hover:shadow-cyan-500/50">
-                <i class="fas fa-download"></i>
-                <span>Télécharger mon CV</span>
+    <main class="container mx-auto px-4 sm:px-6 py-12 sm:py-16 flex flex-col md:flex-row items-center justify-between gap-8 sm:gap-12 relative z-10  overflow-hidden">
+        <!-- Image avec animation améliorée -->
+        <div class="relative w-44 sm:w-64 md:w-96 group">
+            <img 
+                src="images/cdd.png" 
+                alt="Photo de Coura Dieye Diop" 
+                class="w-full h-auto rounded-full shadow-xl transform transition-all duration-700 hover:scale-110 hover:shadow-cyan-500/70 animate-[float_3s_ease-in-out_infinite] parallax-img"
+            >
+            <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-cyan-400/50 transition-all duration-500 ease-in-out animate-[spin_4s_linear_infinite_paused] group-hover:animate-[spin_4s_linear_infinite]"></div>
+        </div>
+        
+        <!-- Contenu texte -->
+        <div class="flex flex-col space-y-6 text-center md:text-left animate-[fadeInUp_1s_ease-out_forwards] delay-200 max-w-2xl">
+            <!-- Titre et description -->
+            <div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-cyan-400 tracking-tight leading-tight drop-shadow-md transition-all duration-300 hover:text-cyan-300">
+                    Je suis Coura Dieye Diop
+                </h2>
+                <p class="text-lg sm:text-xl text-gray-300 mt-2 font-light drop-shadow-sm">
+                    Développeuse web full stack passionnée par l’innovation et la création d’expériences numériques interactives et performantes.
+                </p>
+            </div>
+    
+            <!-- Bouton CV avec fond ajusté à la longueur du texte -->
+            <a 
+                href="cv.pdf" 
+                download 
+                class="relative bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-2 py-2 rounded-full shadow-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-500 inline-flex items-center justify-center space-x-2 mx-auto md:mx-0 hover:shadow-[0_0_15px_#00e6e6] transform hover:-translate-y-2 focus:outline-none focus:ring-2 focus:ring-cyan-300 group"
+            >
+                <i class="fas fa-download transition-transform duration-300 group-hover:animate-[bounce_0.5s_ease-in-out]"></i>
+                <span class="font-medium text-sm">Télécharger mon CV</span>
+                <!-- Glow pulsé -->
+                <span class="absolute inset-0 rounded-full bg-cyan-400/20 opacity-0 group-hover:opacity-100 animate-[pulse_2s_infinite]"></span>
             </a>
-            <div class="flex space-x-6 text-3xl justify-center md:justify-start">
-                <a href="https://www.linkedin.com/in/coura-dieye-diop-3b8958337/" target="_blank" class="text-blue-600 hover:scale-125 transition"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/CuraJoop" target="_blank" class="text-gray-300 hover:scale-125 transition"><i class="fab fa-github"></i></a>
-                <a href="https://wa.me/781261386" target="_blank" class="text-green-500 hover:scale-125 transition"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://twitter.com/cura" target="_blank" class="text-blue-400 hover:scale-125 transition"><i class="fab fa-twitter"></i></a>
-                <a href="https://facebook.com/curadiop" target="_blank" class="text-blue-600 hover:scale-125 transition"><i class="fab fa-facebook"></i></a>
-                <a href="https://instagram.com/coura_dieye_diop" target="_blank" class="text-pink-500 hover:scale-125 transition"><i class="fab fa-instagram"></i></a>
+    
+            <!-- Réseaux sociaux améliorés -->
+            <div class="flex flex-wrap justify-center md:justify-start gap-5 sm:gap-7 text-2xl sm:text-3xl">
+                <a href="https://www.linkedin.com/in/coura-dieye-diop-3b8958337/" target="_blank" aria-label="LinkedIn" class="text-blue-600 hover:scale-125 hover:text-blue-500 transition-all duration-300 transform hover:-translate-y-1 group relative">
+                    <i class="fab fa-linkedin"></i>
+                    <span class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-800 text-white text-xs rounded px-2 py-1">LinkedIn</span>
+                </a>
+                <a href="https://github.com/CuraJoop" target="_blank" aria-label="GitHub" class="text-gray-300 hover:scale-125 hover:text-gray-200 transition-all duration-300 transform hover:-translate-y-1 group relative">
+                    <i class="fab fa-github"></i>
+                    <span class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-800 text-white text-xs rounded px-2 py-1">GitHub</span>
+                </a>
+                <a href="https://wa.me/781261386" target="_blank" aria-label="WhatsApp" class="text-green-500 hover:scale-125 hover:text-green-400 transition-all duration-300 transform hover:-translate-y-1 group relative">
+                    <i class="fab fa-whatsapp"></i>
+                    <span class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-800 text-white text-xs rounded px-2 py-1">WhatsApp</span>
+                </a>
+                <a href="https://twitter.com/cura" target="_blank" aria-label="Twitter" class="text-blue-400 hover:scale-125 hover:text-blue-300 transition-all duration-300 transform hover:-translate-y-1 group relative">
+                    <i class="fab fa-twitter"></i>
+                    <span class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-800 text-white text-xs rounded px-2 py-1">Twitter</span>
+                </a>
+                <a href="https://facebook.com/curadiop" target="_blank" aria-label="Facebook" class="text-blue-600 hover:scale-125 hover:text-blue-500 transition-all duration-300 transform hover:-translate-y-1 group relative">
+                    <i class="fab fa-facebook"></i>
+                    <span class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-800 text-white text-xs rounded px-2 py-1">Facebook</span>
+                </a>
+                <a href="https://instagram.com/coura_dieye_diop" target="_blank" aria-label="Instagram" class="text-pink-500 hover:scale-125 hover:text-pink-400 transition-all duration-300 transform hover:-translate-y-1 group relative">
+                    <i class="fab fa-instagram"></i>
+                    <span class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-800 text-white text-xs rounded px-2 py-1">Instagram</span>
+                </a>
             </div>
         </div>
     </main>
-
+    
+    <!-- CSS personnalisé pour animations -->
+    <style>
+        .animate-fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        .delay-200 {
+            animation-delay: 0.3s;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.1); }
+        }
+        .parallax-img {
+            transform: translateZ(20px);
+            will-change: transform;
+        }
+    </style>
     <!-- Formations -->
     <section id="formations" class="container mx-auto px-6 py-16 relative z-10">
         <h2 class="text-4xl font-bold text-center mb-12 text-cyan-400">🎓 Mes Formations</h2>
@@ -485,7 +559,7 @@
     </div>
 </section>
     <!-- Contact -->
-<section id="contact" class="container mx-auto px-6 py-16 relative z-10 bg-gray-900">
+<section id="contact" class="container mx-auto px-6 py-16 relative z-10 ">
     <h2 class="text-4xl font-extrabold text-center mb-12 text-cyan-400 tracking-tight animate-pulse">📞 Contactez-moi</h2>
     <div class="flex flex-col md:flex-row items-start justify-between max-w-4xl mx-auto gap-8">
         <!-- Informations de contact -->
