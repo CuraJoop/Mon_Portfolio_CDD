@@ -1,0 +1,717 @@
+/* POLICE */
+.rajdhani-light {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.rajdhani-regular {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.rajdhani-medium {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.rajdhani-semibold {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.rajdhani-bold {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+/* STYLE DU BODY */
+html{
+    --primary: #123c53;
+    --secondary: brown;
+}
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'rajdhani', Georgia, 'Times New Roman', Times, serif;
+    background-color: white;
+    line-height: 0.8;
+    position: relative;
+}
+a{
+    text-decoration: none;
+}
+
+
+/* CODE DU HEADER*/
+#navigation ul, #navigation{
+    display: flex;
+    justify-content: space-between;
+}
+header{
+    position: absolute;
+    width: 100%;
+}
+#navigation{
+    z-index: 6;
+    padding: 1%;
+    background-color: aliceblue;
+    box-shadow: 4px 2px 6px var(--primary);
+    position: fixed;
+    width: 100%;
+    position: fixed;
+    width: 100%;
+    height: 85px;
+    align-items: center;
+}
+#logo,ul li a{
+    margin-left: 20px; 
+    font-size: large;
+    color: black;
+}
+ul{
+    list-style: none;
+}
+#navigation ul li a {
+    font-size: x-large;
+    text-decoration: none;
+}
+#navigation ul li a:hover{
+    color: var(--secondary);
+    text-decoration:overline;
+    padding-top: 42px;
+    transition: 0.5s;
+}
+#contact{
+    font-family: 'rajdhani';
+    margin-right: 4%;}
+#contact i{
+    color: var(--secondary);
+}
+
+#slogan{
+    margin-top: 7%;
+    background-image: url(./images/agenceImmo.jpg);
+    height: 550px;
+    width: auto;
+    background-size: cover;
+    align-items: center;
+}
+#headerslogan{
+    background-image: url(images/agence-immobiliere.jpg);
+    height: 300px;
+    background-size: cover;
+    color: white;
+}
+#text, #headerText{
+    color: white;
+    width: 45%;
+    font-style: upercase;
+    text-transform: uppercase;
+    font-family: 'rajdhani';
+    font-weight: bold;
+}
+#text{
+    padding: 16% 0 0 2%;
+    line-height: 1.2;
+    font-size: xxx-large;
+}
+#headerText{
+    margin-top: 8%;
+    padding: 9% 0 9% 6%;
+    line-height: 1.6;
+    font-size: xx-large;
+}
+
+
+
+/* STYLE DE SECTION */
+#corps{
+    width: 100%;
+    padding: 55% 0% 4% 0%;
+}
+#message{
+    align-items: center;
+    font-family: 'rajdhani';
+    font-size: large;
+    line-height: 2;
+    
+}
+#imageAPropos{
+    padding-top: 6%;
+}
+h1{
+    font-size: 40px;
+}
+#aPropos{
+    padding: 0 2% 0 3%;
+    display: flex;
+    justify-content: space-between;
+}
+#message{
+    width: 45%;
+    margin-right: 5%;
+}
+
+
+
+/* STYLE SERVICE */
+#service{
+        padding: 0 2% 0 2%;
+    }
+#aVendre, #aLouer{
+    margin:2%;
+    justify-content: space-between;
+    display: flex;
+}
+.propostion:hover{
+    border-radius: 14px;
+    background-color: rgb(214, 109, 109);
+    cursor: pointer;
+}
+.card {
+    position: relative;
+    width: 280px;
+    height: 230px;
+    border-radius: 14px;
+    z-index:4;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+    ;
+}
+
+.bg {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 270px;
+    height: 220px;
+    z-index: 3;
+    background: rgba(255, 255, 255, .95);
+    backdrop-filter: blur(24px);
+    border-radius: 10px;
+    outline: 2px solid white;
+}
+
+.blob {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    width: 230px;
+    height: 130px;
+    border-radius: 50%;
+    background-color:rgb(20, 7, 81);
+    opacity: 1;
+    filter: blur(12px);
+    animation: blob-bounce 5s infinite ease;
+}
+
+@keyframes blob-bounce {
+    0% {
+        transform: translate(-100%, -100%) translate3d(0, 0, 0);
+    }
+
+    25% {
+        transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+    }
+
+    50% {
+        transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+    }
+
+    75% {
+        transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+    }
+
+    100% {
+        transform: translate(-100%, -100%) translate3d(0, 0, 0);
+    }
+}
+#contenu{
+    color: var(--secondary);
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+#contenu a {
+    color: var(--secondary);
+}
+#contenu svg{
+    height: 80px;
+}
+
+
+
+/* STYLE PLUS INFO */
+#PlusInfo{
+    width: 100%;
+    margin-top: 6%;
+    height: 800px;
+    background-image: url(./images/choix2.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+#messagePlusInfo{
+    line-height: 1.5;
+    margin: 1.5% 6%;
+    padding: 2%;
+    width: 35%;
+    background-color: white;
+    float: right;
+}
+#enteteMessage{
+    cursor: pointer;
+    margin-left: 8%;
+    color: white;
+    background-color: var(--primary);
+    text-align: center;
+    width: 80%;
+    padding: 1.5%;
+    border-radius: 10px;
+}
+#corpsMessage{
+    font-size: large;
+}
+
+
+
+/* STYLE DE OFFRES */
+#offres{
+    padding: 0 2% 0 3%;
+    margin-top: 8%;
+}
+#offres, #listOffres{
+    display: flex;
+}
+#listOffres{
+    padding: 0 2%;
+    flex-grow: 1;
+    justify-content: space-between;
+    line-height: 2.5;
+}
+
+#titreOffres{
+    text-align: center;
+    padding: 2%;
+    color: aliceblue;
+    font-size: xx-large;
+    font-weight: normal;
+    background-color: var(--primary);
+    box-shadow: 4px 4px 8px var(--primary);
+    width: 30%;
+    border-radius: 100px 0 100px 0;
+}
+.listOffresItem i{
+    color: var(--secondary);
+}
+.listOffresItem a{
+    text-decoration: none;
+}
+.listOffresItem a:hover{
+    color: var(--secondary);
+    transition: 0.5s;
+}
+
+
+/* STYLE DU FOOTER */
+footer{
+    margin-top: 4%;
+    color: #fff;
+    line-height: 1.5;
+    width: 100%;
+
+}
+#contenuFooter{
+    background: #3b6c87b4;
+}
+#headerTop{
+    padding: 2% 2% 2% 4%;
+    display: flex;
+    justify-content: space-between;
+}
+#headerTop h2{
+    color: var(--secondary);
+}
+#headerTopGauche{
+    width: 40%;
+}
+#headerTopMiddle{
+    width: 20%;
+}
+#HeaderTopDroite{
+    width: 30%;
+}
+#HeaderTopDroiteinput{
+    display: flex;
+    flex-direction: column;
+}
+#HeaderTopDroiteinput input{
+    padding: 4%;
+    border-radius: 6px;
+}
+#mail_souscription{
+    border: 2px solid  var(--primary);
+    background-color: #3e6f8a14;
+}
+#mail_souscription:hover{
+    border: 2px solid  var(--secondary);
+}
+#HeaderTopDroiteinput input[type="submit"]{
+    margin-top: 6%;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+    color: #ffffff;
+    background-color: var(--primary);
+}
+#HeaderTopDroiteinput #mail_souscription::placeholder{
+    color: #fff;
+}
+#HeaderTopDroiteinput input[type="submit"]:hover{
+    background-color: #123c53cc;
+}
+#socialItem{
+    text-align: center;
+    font-size: xx-large;
+}
+#socialItem i{
+    padding: 3%;
+}
+#socialItem #facebook{
+    color: blue;
+}
+#socialItem #insta{
+    color:#f9007c ;
+}
+#socialItem #twitter,#socialItem #tiktok{
+    color: black;
+}
+#headerMiddle{
+    padding: 2%;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+#headerMiddle i{
+    color: var(--primary);
+    font-size: xx-large;
+}
+#copyright{
+    width: 100%;
+    margin: auto;
+    padding: 1% 0;
+    height: 50px;
+    text-align: center;
+    background-color: #123c53e2;
+    color: rgba(181, 181, 181, 0.849);
+}
+
+
+
+/* STYLE DE CONTACT */
+
+#BodyForContact{
+    background-size: cover;
+    background-image: url(images/R.jpg);
+}
+
+#contactBody{
+    display: flex;
+    padding: 37% 2% 4% 0%;
+}
+#contactBodyDroite, #contactBodyGauche{
+    height: 700px; padding-top: 8%;
+}
+#contactBodyDroite{
+    background-color: #08202e92;
+    padding-left: 2%;
+    color: #ffffff;
+    width:50% ;
+}
+#contactBodyDroite h1{
+    font-weight: normal;
+    text-align: center;
+}
+#formContact {
+	margin-top: 120px;
+    max-width: 400px;
+    margin: 0 auto; 
+    padding: 20px;
+}
+legend{
+    font-weight: bold;
+	color: #da618d;
+	font-size: xx-large;
+	margin-bottom: 4%;
+}
+.champ input[type="text"],.champ input[type="email"],#contactBodyDroite textarea {
+    width: 100%;
+    padding: 18px 18px 18px 25px;
+	background-color: #08202e92;
+    border: 2px solid white;
+    border-radius: 3px;
+    margin-bottom: 15px;
+	outline-color: #dc7e4b;
+	color: #fff;
+}
+#contactBodyDroite textarea{
+	outline: none;
+	resize: none;
+}
+#contactBodyDroite input[value="Envoyer"] {
+    background-color: var(--primary);
+    color: #fff; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+#contactBodyDroite input[value="Envoyer"]:hover{
+    background-color: rgb(144, 39, 39);
+}
+#contactBodyGauche{
+    width:50% ;
+}
+/* STYLE DE LOGEMENT */
+#corpsLogement{
+    padding: 35% 0 0 0;
+}
+#tableauLogement{
+    padding: 3%;
+    flex-direction: column;
+    display: flex;
+    text-align: center;
+}
+table{
+    border-collapse: collapse;
+}
+td,th{
+    text-align: center;
+    line-height: 1.9;
+    border: 1.5px solid black;
+}
+th{
+    background-color: var(--primary);
+    color: white;
+}
+.logementBody{
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.infoLogement{
+    position: relative;
+    line-height: 1.4;
+    width: 370px;
+    margin-left: 2%;
+    height: 570px;
+    box-shadow: 4px 4px 6px #333333d8;
+    /* background-color: #da618d; */
+}
+.infoLogement img{
+    width: 370px;
+}
+.carousselImages{
+    display: flex;
+}
+.carousselImages:hover{
+    animation-duration: 15s;
+    animation-name: caroussel;
+    animation-iteration-count: infinite;
+}
+@keyframes caroussel {
+    0%{
+        transform: translate(0);
+    }
+    25%{
+        transform: translate(-370px);
+    }
+    50%{
+        transform: translate(-740px);
+    }
+    75%{
+        transform: translate(-1110px);
+    }
+    100%{
+        transform: translate(0);
+    }
+}
+.logement{
+    margin-bottom: 4%;
+}
+.caroussel{
+    width: 370px;
+    height: 255px;
+    overflow:hidden;
+    flex-wrap: nowrap;
+}
+.textInfo{
+    width: 70%;
+    padding: 4%;
+}
+.nomImmobilier{
+    color: var(--primary);
+}
+.prixImmobilier{
+    color: var(--secondary);
+    font-size: x-large;
+}
+.nousJoindre{
+    position: absolute;
+    bottom: 0;
+    /* margin: 5% 0 0 10%; */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.nousJoindre i{
+    color: var(--secondary);
+}
+.nousJoindre a {
+    color: var(--primary);
+}
+.nousContacter{
+    padding: 3%;
+    background-color: #123c533e;
+    margin:0 0 2% 4%;
+    border-radius: 14px;
+}
+
+/* STYLE INSCRIPTION */
+#BodyForInscription{
+    background: #123c5329;
+    /* background-image: url(images);
+    background-size: cover; */
+    /* background: url(images/image.jpg); 
+    background-size: cover; */
+}
+#inscriptionBody{
+    padding: 35% 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+}
+.container{
+    position: relative;
+    width: 860px;
+    height: 550px;
+    margin: 2%;
+    background: transparent;
+    border: 2px solid rgb(7, 7, 61);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.content{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.content h2{
+    font-size: xx-large;
+    color: var(--primary);
+    text-align: center;
+}
+.box{
+    width: 100%;
+    margin: 6%;
+    font-size: 18px;
+    font-weight: bold;
+}
+.box input{
+    background: transparent;
+    border: 0;
+    outline: none;
+    border-bottom: 1px solid var(--primary);
+    color: var(--primary);
+    font-size: 18px ;
+}
+.box p{
+    color: var(--primary);
+    font-weight: normal;
+}
+.box select{
+    border: 1px solid var(--primary);
+    padding: 1%;
+    border-radius: 4px;
+    background-color: rgba(165, 42, 42, 0.107); ;
+    color: var(--primary);
+}
+.box input::placeholder{
+    font-family: 'rajdhani', Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    color: var(--primary);
+}
+#btn{
+    margin-left: 30%;
+    width: 30%;
+    height: 30px; 
+    background: var(--secondary);
+    color: #fff;
+    border: 0;
+    font-size: 14px;
+    border-radius: 40px;
+}
+#btn:hover{
+    cursor: pointer;
+    background: var(--primary);
+    transition: .8s;
+}
+/* ---------------- */
+.text{
+    color: black;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 90px;
+}
+.text h2{
+    font-size:35px ;
+    color: var(--secondary); 
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.text p{
+    line-height: 1.6;
+    /* color: var(--secondary); */
+    font-size: 18px;
+    margin-top: 10px;
+    text-align: center;
+}
+.drop{
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    top: 0;
+    right: 0;
+    background:  var(--primary);
+    transform: rotate(12deg) skewY(40deg);
+    transform-origin: bottom right;
+}
+
+
