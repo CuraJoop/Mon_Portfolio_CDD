@@ -8,7 +8,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
     <style>
-        /* Effet de tremblement pour la page */
         .shake {
             animation: shake 0.1s ease-in-out;
         }
@@ -19,21 +18,27 @@
             75% { transform: translateX(-2px); }
             100% { transform: translateX(0); }
         }
+        /* Style pour le menu mobile */
+        #nav-menu {
+            transition: all 0.3s ease-in-out;
+        }
+        #nav-menu.open {
+            display: flex;
+            height: calc(100vh - 4rem); /* Ajuste la hauteur pour remplir l'écran sous le header */
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-white relative overflow-x-hidden">
-    <!-- Canvas pour l'animation de fond -->
     <canvas id="backgroundCanvas" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
 
     <!-- Barre de navigation -->
     <header class="bg-gray-800 shadow-lg fixed w-full top-0 left-0 z-20">
         <div class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
             <h1 class="text-xl sm:text-2xl font-bold text-cyan-400 hover:text-cyan-300 transition">COURA D. DIOP</h1>
-            <!-- Menu burger pour mobile -->
             <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
-            <nav id="nav-menu" class="hidden md:flex md:space-x-6 absolute md:static top-16 left-0 w-full md:w-auto bg-gray-800 md:bg-transparent flex-col md:flex-row items-center p-4 md:p-0 transition-all duration-300">
+            <nav id="nav-menu" class="hidden md:flex md:space-x-6 absolute md:static top-16 left-0 w-full md:w-auto bg-gray-800 md:bg-transparent flex-col md:flex-row items-center p-4 md:p-0">
                 <a href="#" class="relative text-white hover:text-cyan-400 transition py-2 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-cyan-400 after:transition-all after:duration-300 hover:after:w-full">🏠 Accueil</a>
                 <a href="#formations" class="relative text-white hover:text-cyan-400 transition py-2 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-cyan-400 after:transition-all after:duration-300 hover:after:w-full">🎓 Formation</a>
                 <a href="#competences" class="relative text-white hover:text-cyan-400 transition py-2 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-cyan-400 after:transition-all after:duration-300 hover:after:w-full">🛠️ Compétences</a>
@@ -45,507 +50,506 @@
             </nav>
         </div>
     </header>
+  <!-- Section d'introduction -->
+  <section class="pt-24 sm:pt-32 text-center relative z-10">
+    <h1 id="static-title" class="text-4xl sm:text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-blue-500 to-cyan-400 text-transparent bg-clip-text mb-4">Bienvenue sur mon Portfolio</h1>
+    <p id="typing-subtitle" class="text-base sm:text-lg text-gray-300 mt-4 max-w-xl sm:max-w-2xl mx-auto"></p>
+</section>
 
-    <!-- Section d'introduction -->
-    <section class="pt-24 sm:pt-32 text-center relative z-10">
-        <h1 id="static-title" class="text-4xl sm:text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-blue-500 to-cyan-400 text-transparent bg-clip-text mb-4">Bienvenue sur mon Portfolio</h1>
-        <p id="typing-subtitle" class="text-base sm:text-lg text-gray-300 mt-4 max-w-xl sm:max-w-2xl mx-auto"></p>
-    </section>
+<!-- Contenu principal -->
+<main class="container mx-auto px-4 sm:px-6 py-12 sm:py-16 flex flex-col md:flex-row items-center justify-between space-y-10 md:space-y-0 md:space-x-10 relative z-10">
+    <img src="images/cdd.png" alt="Mon image" class="w-64 sm:w-72 md:w-80 h-auto rounded-full shadow-lg transform transition duration-500 hover:rotate-6 hover:shadow-cyan-500/50">
+    <div class="flex flex-col space-y-6 text-center md:text-left">
+        <h2 class="text-4xl sm:text-5xl font-bold text-cyan-400">Coura Dieye Diop</h2>
+        <a href="cv.pdf" download class="bg-cyan-500 text-white px-6 py-3 rounded-full shadow-md hover:bg-cyan-600 transition duration-300 inline-flex items-center space-x-2 mx-auto md:mx-0 hover:shadow-cyan-500/50">
+            <i class="fas fa-download"></i>
+            <span>Télécharger mon CV</span>
+        </a>
+        <div class="flex space-x-4 sm:space-x-6 text-2xl sm:text-3xl justify-center md:justify-start">
+            <a href="https://www.linkedin.com/in/coura-dieye-diop-3b8958337/" target="_blank" class="text-blue-600 hover:scale-125 transition"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/CuraJoop" target="_blank" class="text-gray-300 hover:scale-125 transition"><i class="fab fa-github"></i></a>
+            <a href="https://wa.me/781261386" target="_blank" class="text-green-500 hover:scale-125 transition"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://twitter.com/cura" target="_blank" class="text-blue-400 hover:scale-125 transition"><i class="fab fa-twitter"></i></a>
+            <a href="https://facebook.com/curadiop" target="_blank" class="text-blue-600 hover:scale-125 transition"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com/coura_dieye_diop" target="_blank" class="text-pink-500 hover:scale-125 transition"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</main>
 
-    <!-- Contenu principal -->
-    <main class="container mx-auto px-4 sm:px-6 py-12 sm:py-16 flex flex-col md:flex-row items-center justify-between space-y-10 md:space-y-0 md:space-x-10 relative z-10">
-        <img src="images/cdd.png" alt="Mon image" class="w-64 sm:w-72 md:w-80 h-auto rounded-full shadow-lg transform transition duration-500 hover:rotate-6 hover:shadow-cyan-500/50">
-        <div class="flex flex-col space-y-6 text-center md:text-left">
-            <h2 class="text-4xl sm:text-5xl font-bold text-cyan-400">Coura Dieye Diop</h2>
-            <a href="cv.pdf" download class="bg-cyan-500 text-white px-6 py-3 rounded-full shadow-md hover:bg-cyan-600 transition duration-300 inline-flex items-center space-x-2 mx-auto md:mx-0 hover:shadow-cyan-500/50">
-                <i class="fas fa-download"></i>
-                <span>Télécharger mon CV</span>
-            </a>
-            <div class="flex space-x-4 sm:space-x-6 text-2xl sm:text-3xl justify-center md:justify-start">
-                <a href="https://www.linkedin.com/in/coura-dieye-diop-3b8958337/" target="_blank" class="text-blue-600 hover:scale-125 transition"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/CuraJoop" target="_blank" class="text-gray-300 hover:scale-125 transition"><i class="fab fa-github"></i></a>
-                <a href="https://wa.me/781261386" target="_blank" class="text-green-500 hover:scale-125 transition"><i class="fab fa-whatsapp"></i></a>
+<!-- Formations -->
+<section id="formations" class="container mx-auto px-4 sm:px-6 py-12 sm:py-16 relative z-10">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 sm:mb-12 text-cyan-400">🎓 Mes Formations</h2>
+    <div class="flex justify-center mb-6 sm:mb-8">
+        <img src="images/graduation hats.gif" alt="GIF d'éducation" class="w-24 sm:w-32 h-24 sm:h-32 object-cover rounded-lg">
+    </div>
+    <div class="relative flex flex-col items-center space-y-10 sm:space-y-12">
+        <div class="absolute w-1 bg-cyan-500 h-full z-0 opacity-50 hidden sm:block"></div>
+        <div class="formation-item w-full flex flex-col sm:flex-row-reverse items-center opacity-0 translate-x-12 transition-all duration-700 ease-out">
+            <div class="w-full sm:w-1/2 text-center sm:text-left pl-0 sm:pl-6 mt-4 sm:mt-0">
+                <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-start">
+                    <i class="fas fa-graduation-cap text-cyan-400 text-xl sm:text-2xl mr-0 sm:mr-2 mb-2 sm:mb-0"></i>
+                    <div>
+                        <h3 class="text-base sm:text-lg font-semibold text-white">Formation en Data Analytics - Force-N</h3>
+                        <p class="text-gray-400 text-sm sm:text-base">2025</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-4 h-4 bg-cyan-500 rounded-full z-10"></div>
+            <div class="w-full sm:w-1/2"></div>
+        </div>
+        <div class="formation-item w-full flex flex-col sm:flex-row items-center opacity-0 -translate-x-12 transition-all duration-700 ease-out">
+            <div class="w-full sm:w-1/2 text-center sm:text-right pr-0 sm:pr-6 mt-4 sm:mt-0">
+                <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-end">
+                    <i class="fas fa-graduation-cap text-cyan-400 text-xl sm:text-2xl mr-0 sm:mr-2 mb-2 sm:mb-0"></i>
+                    <div>
+                        <h3 class="text-base sm:text-lg font-semibold text-white">Licence 2 Génie Informatique - UNIPRO</h3>
+                        <p class="text-gray-400 text-sm sm:text-base">2024-2025</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-4 h-4 bg-cyan-500 rounded-full z-10"></div>
+            <div class="w-full sm:w-1/2"></div>
+        </div>
+        <div class="formation-item w-full flex flex-col sm:flex-row-reverse items-center opacity-0 translate-x-12 transition-all duration-700 ease-out">
+            <div class="w-full sm:w-1/2 text-center sm:text-left pl-0 sm:pl-6 mt-4 sm:mt-0">
+                <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-start">
+                    <i class="fas fa-graduation-cap text-cyan-400 text-xl sm:text-2xl mr-0 sm:mr-2 mb-2 sm:mb-0"></i>
+                    <div>
+                        <h3 class="text-base sm:text-lg font-semibold text-white">Licence 2 Mathématiques Appliquées et Informatique - UNCHK</h3>
+                        <p class="text-gray-400 text-sm sm:text-base">2024-2025</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-4 h-4 bg-cyan-500 rounded-full z-10"></div>
+            <div class="w-full sm:w-1/2"></div>
+        </div>
+        <div class="formation-item w-full flex flex-col sm:flex-row items-center opacity-0 -translate-x-12 transition-all duration-700 ease-out">
+            <div class="w-full sm:w-1/2 text-center sm:text-right pr-0 sm:pr-6 mt-4 sm:mt-0">
+                <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-end">
+                    <i class="fas fa-graduation-cap text-cyan-400 text-xl sm:text-2xl mr-0 sm:mr-2 mb-2 sm:mb-0"></i>
+                    <div>
+                        <h3 class="text-base sm:text-lg font-semibold text-white">Licence 1 Génie Informatique - UNIPRO</h3>
+                        <p class="text-gray-400 text-sm sm:text-base">2023-2024</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-4 h-4 bg-cyan-500 rounded-full z-10"></div>
+            <div class="w-full sm:w-1/2"></div>
+        </div>
+        <div class="formation-item w-full flex flex-col sm:flex-row-reverse items-center opacity-0 translate-x-12 transition-all duration-700 ease-out">
+            <div class="w-full sm:w-1/2 text-center sm:text-left pl-0 sm:pl-6 mt-4 sm:mt-0">
+                <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-start">
+                    <i class="fas fa-graduation-cap text-cyan-400 text-xl sm:text-2xl mr-0 sm:mr-2 mb-2 sm:mb-0"></i>
+                    <div>
+                        <h3 class="text-base sm:text-lg font-semibold text-white">Licence 1 Mathématiques Appliquées et Informatique - UNCHK</h3>
+                        <p class="text-gray-400 text-sm sm:text-base">2023-2024</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-4 h-4 bg-cyan-500 rounded-full z-10"></div>
+            <div class="w-full sm:w-1/2"></div>
+        </div>
+        <div class="formation-item w-full flex flex-col sm:flex-row items-center opacity-0 -translate-x-12 transition-all duration-700 ease-out">
+            <div class="w-full sm:w-1/2 text-center sm:text-right pr-0 sm:pr-6 mt-4 sm:mt-0">
+                <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-end">
+                    <i class="fas fa-graduation-cap text-cyan-400 text-xl sm:text-2xl mr-0 sm:mr-2 mb-2 sm:mb-0"></i>
+                    <div>
+                        <h3 class="text-base sm:text-lg font-semibold text-white">Baccalauréat Scientifique - Groupe Scolaire Abdou Latif Gueye</h3>
+                        <p class="text-gray-400 text-sm sm:text-base">2011-2022</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-4 h-4 bg-cyan-500 rounded-full z-10"></div>
+            <div class="w-full sm:w-1/2"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Compétences -->
+<section id="competences" class="container mx-auto px-4 sm:px-6 py-12 sm:py-16 relative z-10">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 sm:mb-12 text-cyan-400 animate-bounce">🚀 Mes Compétences</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div class="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg transform transition duration-500 hover:shadow-cyan-500/50 hover:-translate-y-2">
+            <div class="flex items-center mb-4">
+                <i class="fas fa-html5 text-2xl sm:text-3xl text-orange-500 mr-3"></i>
+                <h3 class="text-lg sm:text-xl font-semibold text-white">Développement Web</h3>
+            </div>
+            <p class="text-gray-400 text-sm sm:text-base mb-2">Création de sites modernes et responsives.</p>
+            <p class="text-cyan-400 text-xs sm:text-sm mb-4">HTML, CSS, JavaScript, Tailwind CSS, React, Bootstrap</p>
+            <div class="w-full bg-gray-700 rounded-full h-2 sm:h-3 overflow-hidden">
+                <div class="bg-orange-500 h-2 sm:h-3 rounded-full transition-all duration-1000 ease-out" style="width: 0%;" data-width="95%"></div>
+            </div>
+        </div>
+        <div class="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg transform transition duration-500 hover:shadow-cyan-500/50 hover:-translate-y-2">
+            <div class="flex items-center mb-4">
+                <i class="fas fa-code text-2xl sm:text-3xl text-green-500 mr-3"></i>
+                <h3 class="text-lg sm:text-xl font-semibold text-white">Programmation</h3>
+            </div>
+            <p class="text-gray-400 text-sm sm:text-base mb-2">Développement d'algorithmes et logique.</p>
+            <p class="text-cyan-400 text-xs sm:text-sm mb-4">Python, C, Java, TypeScript, JavaScript</p>
+            <div class="w-full bg-gray-700 rounded-full h-2 sm:h-3 overflow-hidden">
+                <div class="bg-green-500 h-2 sm:h-3 rounded-full transition-all duration-1000 ease-out" style="width: 0%;" data-width="75%"></div>
+            </div>
+        </div>
+        <div class="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg transform transition duration-500 hover:shadow-cyan-500/50 hover:-translate-y-2">
+            <div class="flex items-center mb-4">
+                <i class="fas fa-tools text-2xl sm:text-3xl text-yellow-500 mr-3"></i>
+                <h3 class="text-lg sm:text-xl font-semibold text-white">Outils & Logiciels</h3>
+            </div>
+            <p class="text-gray-400 text-sm sm:text-base mb-2">Maîtrise des environnements de développement.</p>
+            <p class="text-cyan-400 text-xs sm:text-sm mb-4">VS Code, WordPress, Git, GitHub, PyCharm, XAMPP, WAMP</p>
+            <div class="w-full bg-gray-700 rounded-full h-2 sm:h-3 overflow-hidden">
+                <div class="bg-yellow-500 h-2 sm:h-3 rounded-full transition-all duration-1000 ease-out" style="width: 0%;" data-width="85%"></div>
+            </div>
+        </div>
+        <div class="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg transform transition duration-500 hover:shadow-cyan-500/50 hover:-translate-y-2">
+            <div class="flex items-center mb-4">
+                <i class="fas fa-laptop text-2xl sm:text-3xl text-purple-500 mr-3"></i>
+                <h3 class="text-lg sm:text-xl font-semibold text-white">Systèmes d'exploitation</h3>
+            </div>
+            <p class="text-gray-400 text-sm sm:text-base mb-2">Gestion et configuration des OS.</p>
+            <p class="text-cyan-400 text-xs sm:text-sm mb-4">Windows, Linux</p>
+            <div class="w-full bg-gray-700 rounded-full h-2 sm:h-3 overflow-hidden">
+                <div class="bg-purple-500 h-2 sm:h-3 rounded-full transition-all duration-1000 ease-out" style="width: 0%;" data-width="80%"></div>
+            </div>
+        </div>
+        <div class="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg transform transition duration-500 hover:shadow-cyan-500/50 hover:-translate-y-2">
+            <div class="flex items-center mb-4">
+                <i class="fas fa-users text-2xl sm:text-3xl text-pink-500 mr-3"></i>
+                <h3 class="text-lg sm:text-xl font-semibold text-white">Soft Skills</h3>
+            </div>
+            <p class="text-gray-400 text-sm sm:text-base mb-2">Compétences humaines essentielles.</p>
+            <p class="text-cyan-400 text-xs sm:text-sm mb-4">Autonomie, Créativité, Travail d'équipe</p>
+            <div class="w-full bg-gray-700 rounded-full h-2 sm:h-3 overflow-hidden">
+                <div class="bg-pink-500 h-2 sm:h-3 rounded-full transition-all duration-1000 ease-out" style="width: 0%;" data-width="90%"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="container mx-auto px-4 sm:px-6 py-12 sm:py-16 relative z-10">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 sm:mb-12 text-cyan-400">💼 Mes Services</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div class="relative bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50">
+            <img src="images/T3.avif" alt="Site vitrine" class="w-full h-32 sm:h-40 object-cover rounded-lg mb-4 transition-opacity duration-300 hover:opacity-30">
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-gray-900/80 rounded-lg">
+                <p class="text-white text-center p-2 sm:p-4 text-sm sm:text-base">Sites vitrine modernes et responsives.</p>
+            </div>
+            <h3 class="text-lg sm:text-xl font-semibold text-white mb-2">🌐 Création de sites web</h3>
+            <p class="text-gray-400 text-sm sm:text-base mb-4">Vitrine, e-commerce, blogs adaptés à vos besoins.</p>
+        </div>
+        <div class="relative bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50">
+            <img src="images/T55.png" alt="Développement Web" class="w-full h-32 sm:h-40 object-cover rounded-lg mb-4 transition-opacity duration-300 hover:opacity-30">
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-gray-900/80 rounded-lg">
+                <p class="text-white text-center p-2 sm:p-4 text-sm sm:text-base">Développement d’applications web sur mesure.</p>
+            </div>
+            <h3 class="text-lg sm:text-xl font-semibold text-white mb-2">💻 Développement Web</h3>
+            <p class="text-gray-400 text-sm sm:text-base mb-4">Applications web sur mesure, API et intégrations.</p>
+        </div>
+        <div class="relative bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50">
+            <img src="images/T1.webp" alt="Design de logo" class="w-full h-32 sm:h-40 object-cover rounded-lg mb-4 transition-opacity duration-300 hover:opacity-30">
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-gray-900/80 rounded-lg">
+                <p class="text-white text-center p-2 sm:p-4 text-sm sm:text-base">Logos créatifs pour une identité forte.</p>
+            </div>
+            <h3 class="text-lg sm:text-xl font-semibold text-white mb-2">📊 Design de logo</h3>
+            <p class="text-gray-400 text-sm sm:text-base mb-4">Logos uniques et professionnels.</p>
+        </div>
+        <div class="relative bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50">
+            <img src="images/T4.avif" alt="Architecture systèmes" class="w-full h-32 sm:h-40 object-cover rounded-lg mb-4 transition-opacity duration-300 hover:opacity-30">
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-gray-900/80 rounded-lg">
+                <p class="text-white text-center p-2 sm:p-4 text-sm sm:text-base">Conception de systèmes robustes.</p>
+            </div>
+            <h3 class="text-lg sm:text-xl font-semibold text-white mb-2">🎓 Étude et architecture des systèmes</h3>
+            <p class="text-gray-400 text-sm sm:text-base mb-4">Conception d'architectures systèmes robustes.</p>
+        </div>
+        <div class="relative bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50">
+            <img src="images/T7.jpeg" alt="Design Graphique" class="w-full h-32 sm:h-40 object-cover rounded-lg mb-4 transition-opacity duration-300 hover:opacity-30">
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-gray-900/80 rounded-lg">
+                <p class="text-white text-center p-2 sm:p-4 text-sm sm:text-base">Interfaces modernes et esthétiques.</p>
+            </div>
+            <h3 class="text-lg sm:text-xl font-semibold text-white mb-2">🎨 Design Graphique</h3>
+            <p class="text-gray-400 text-sm sm:text-base mb-4">Interfaces modernes et intuitives.</p>
+        </div>
+        <div class="relative bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50">
+            <img src="images/T6.avif" alt="Applications personnalisées" class="w-full h-32 sm:h-40 object-cover rounded-lg mb-4 transition-opacity duration-300 hover:opacity-30">
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-gray-900/80 rounded-lg">
+                <p class="text-white text-center p-2 sm:p-4 text-sm sm:text-base">Applications sur mesure sécurisées.</p>
+            </div>
+            <h3 class="text-lg sm:text-xl font-semibold text-white mb-2">🛠️ Création d'applications</h3>
+            <p class="text-gray-400 text-sm sm:text-base mb-4">Applications personnalisées et sécurisées.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Projets -->
+<section id="projets" class="container mx-auto px-4 sm:px-6 py-12 sm:py-16 relative z-10">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 sm:mb-12 text-cyan-400">🎯 Mes Projets Réalisés</h2>
+    <div class="flex flex-wrap justify-center mb-6 sm:mb-8 space-x-2 sm:space-x-4">
+        <button class="filter-btn px-3 py-2 sm:px-4 sm:py-2 bg-cyan-500 text-white rounded-full hover:bg-cyan-600 transition duration-300 text-sm sm:text-base active" data-filter="all">Tout</button>
+        <button class="filter-btn px-3 py-2 sm:px-4 sm:py-2 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition duration-300 text-sm sm:text-base" data-filter="frontend">Frontend</button>
+        <button class="filter-btn px-3 py-2 sm:px-4 sm:py-2 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition duration-300 text-sm sm:text-base" data-filter="backend">Backend</button>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="project-grid">
+        <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="frontend">
+            <img src="images/p1.png" alt="Plateforme Immobilière" class="w-full h-40 sm:h-48 object-cover transition-transform duration-300 hover:scale-105">
+            <div class="p-4 sm:p-6">
+                <h3 class="text-lg sm:text-xl font-bold text-white">🏡 Plateforme Immobilière</h3>
+                <p class="text-gray-400 text-sm sm:text-base mt-2">Présentation de logements avec inscription.</p>
+                <a href="mactaImo/acceuil.html" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition text-sm sm:text-base">Voir plus →</a>
+            </div>
+        </div>
+        <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="backend">
+            <img src="images/P2.png" alt="Calculateur IMC" class="w-full h-40 sm:h-48 object-cover transition-transform duration-300 hover:scale-105">
+            <div class="p-4 sm:p-6">
+                <h3 class="text-lg sm:text-xl font-bold text-white">⚖️ Calculateur IMC</h3>
+                <p class="text-gray-400 text-sm sm:text-base mt-2">Calcul de l'indice de masse corporelle.</p>
+                <a href="IMC_Coura Dieye Diop/index.html" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition text-sm sm:text-base">Voir plus →</a>
+            </div>
+        </div>
+        <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="frontend">
+            <img src="images/p3.png" alt="Site de Boulangerie" class="w-full h-40 sm:h-48 object-cover transition-transform duration-300 hover:scale-105">
+            <div class="p-4 sm:p-6">
+                <h3 class="text-lg sm:text-xl font-bold text-white">🥐 Site de Boulangerie</h3>
+                <p class="text-gray-400 text-sm sm:text-base mt-2">Vitrine avec commande de produits.</p>
+                <a href="CDD/burger.html" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition text-sm sm:text-base">Voir plus →</a>
+            </div>
+        </div>
+        <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="frontend">
+            <img src="images/p4.png" alt="Agence de Voyage" class="w-full h-40 sm:h-48 object-cover transition-transform duration-300 hover:scale-105">
+            <div class="p-4 sm:p-6">
+                <h3 class="text-lg sm:text-xl font-bold text-white">✈️ Agence de Voyage</h3>
+                <p class="text-gray-400 text-sm sm:text-base mt-2">Réservation de voyages.</p>
+                <a href="Agence de voyage/acceuil.html" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition text-sm sm:text-base">Voir plus →</a>
+            </div>
+        </div>
+        <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="frontend">
+            <img src="images/p5.png" alt="Blog sur le Voile" class="w-full h-40 sm:h-48 object-cover transition-transform duration-300 hover:scale-105">
+            <div class="p-4 sm:p-6">
+                <h3 class="text-lg sm:text-xl font-bold text-white">🧕 Blog sur le Voile Féminin</h3>
+                <p class="text-gray-400 text-sm sm:text-base mt-2">Exploration du voile féminin.</p>
+                <a href="CDD/monblog.html" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition text-sm sm:text-base">Voir plus →</a>
+            </div>
+        </div>
+        <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="frontend">
+            <img src="images/projet6.png" alt="Portfolio Personnel" class="w-full h-40 sm:h-48 object-cover transition-transform duration-300 hover:scale-105">
+            <div class="p-4 sm:p-6">
+                <h3 class="text-lg sm:text-xl font-bold text-white">💼 Portfolio Personnel</h3>
+                <p class="text-gray-400 text-sm sm:text-base mt-2">Présentation de mes projets.</p>
+                <a href="projets/portfolio.html" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition text-sm sm:text-base">Voir plus →</a>
+            </div>
+        </div>
+        <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="backend">
+            <img src="images/P7.png" alt="Site de Stationnement" class="w-full h-40 sm:h-48 object-cover transition-transform duration-300 hover:scale-105">
+            <div class="p-4 sm:p-6">
+                <h3 class="text-lg sm:text-xl font-bold text-white">🚗 Stationnement</h3>
+                <p class="text-gray-400 text-sm sm:text-base mt-2">Une plateforme intuitive pour gérer et localiser facilement les places de stationnement.</p>
+                <a href="stationnement/stationnement/index.html" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition text-sm sm:text-base">Voir plus →</a>
+            </div>
+        </div>
+        <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 relative project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="backend">
+            <img src="images/p8.png" alt="Application de Gestion de Bibliothèque" class="w-full h-40 sm:h-48 object-cover transition-transform duration-300 hover:scale-105 cursor-pointer project-preview">
+            <div class="absolute inset-0 bg-gray-900/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6">
+                <p class="text-white text-center text-xs sm:text-sm">Une application backend robuste développée pour gérer efficacement une bibliothèque : suivi des livres, gestion des emprunts et retours, et administration des utilisateurs.</p>
+            </div>
+            <div class="p-4 sm:p-6">
+                <h3 class="text-lg sm:text-xl font-bold text-white">📚 Gestion de Bibliothèque</h3>
+                <p class="text-gray-400 text-sm sm:text-base mt-2">Application pour gérer les livres et emprunts.</p>
+            </div>
+        </div>
+        <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 relative project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="backend">
+            <img src="images/p9.png" alt="Calculatrice avec Python" class="w-full h-40 sm:h-48 object-cover transition-transform duration-300 hover:scale-105 cursor-pointer project-preview">
+            <div class="absolute inset-0 bg-gray-900/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6">
+                <p class="text-white text-center text-xs sm:text-sm">Une calculatrice codée en Python avec interface CLI, offrant des opérations de base (addition, soustraction, multiplication, division) et une gestion simple des erreurs.</p>
+            </div>
+            <div class="p-4 sm:p-6">
+                <h3 class="text-lg sm:text-xl font-bold text-white">🧮 Calculatrice Python</h3>
+                <p class="text-gray-400 text-sm sm:text-base mt-2">Calculatrice simple développée en Python.</p>
+            </div>
+        </div>
+        <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 relative project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="backend">
+            <img src="images/p11.png" alt="Vérificateur de Nombre Premier" class="w-full h-40 sm:h-48 object-cover transition-transform duration-300 hover:scale-105 cursor-pointer project-preview">
+            <div class="absolute inset-0 bg-gray-900/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6">
+                <p class="text-white text-center text-xs sm:text-sm">Un programme backend en Python qui permet à l'utilisateur d'entrer un nombre et vérifie s'il est premier, avec une logique optimisée pour tester la primalité.</p>
+            </div>
+            <div class="p-4 sm:p-6">
+                <h3 class="text-lg sm:text-xl font-bold text-white">🔢 Vérificateur de Nombre Premier</h3>
+                <p class="text-gray-400 text-sm sm:text-base mt-2">Programme pour vérifier si un nombre est premier.</p>
+            </div>
+        </div>
+        <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 relative project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="backend">
+            <img src="images/p12.png" alt="Jeu de Hasard" class="w-full h-40 sm:h-48 object-cover transition-transform duration-300 hover:scale-105 cursor-pointer project-preview">
+            <div class="absolute inset-0 bg-gray-900/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6">
+                <p class="text-white text-center text-xs sm:text-sm">Un jeu de hasard interactif développé en Python, où les joueurs testent leur chance avec des tirages aléatoires et des règles simples pour une expérience amusante.</p>
+            </div>
+            <div class="p-4 sm:p-6">
+                <h3 class="text-lg sm:text-xl font-bold text-white">🎲 Bienvenue au Jeu de Hasard</h3>
+                <p class="text-gray-400 text-sm sm:text-base mt-2">Jeu interactif basé sur le hasard.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Expériences -->
+<section id="experiences" class="container mx-auto px-4 sm:px-6 py-12 sm:py-16 relative z-10">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 sm:mb-12 text-cyan-400 animate-bounce">💼 Expérience Professionnelle</h2>
+    <div class="relative border-l-4 border-cyan-500 ml-4 sm:ml-6 space-y-10 sm:space-y-12">
+        <div class="relative ml-6 sm:ml-8 bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50 experience-item opacity-0 translate-y-12">
+            <div class="absolute -left-7 sm:-left-9 w-6 sm:w-8 h-6 sm:h-8 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg animate-pulse">📌</div>
+            <h3 class="text-xl sm:text-2xl font-semibold text-white">Stagiaire - TGI, Dakar</h3>
+            <span class="text-gray-400 block text-xs sm:text-sm">09 Sept. 2024 – 04 Oct. 2024</span>
+            <p class="text-gray-300 mt-2 sm:mt-3 italic text-sm sm:text-base">Entreprise spécialisée en maintenance informatique et solutions numériques</p>
+            <ul class="text-gray-300 mt-2 sm:mt-3 space-y-2 text-sm sm:text-base list-none">
+                <li class="flex items-start"><span class="text-cyan-400 mr-2">➤</span><span>Maintenance d’iMac : diagnostic précis et remplacement de composants défectueux, réduisant les temps d'arrêt.</span></li>
+                <li class="flex items-start"><span class="text-cyan-400 mr-2">➤</span><span>Développement d’un site e-commerce (CDD SHOP) avec WordPress, intégrant un design responsive.</span></li>
+                <li class="flex items-start"><span class="text-cyan-400 mr-2">➤</span><span>Installation et configuration de systèmes Windows/Linux pour optimiser les performances.</span></li>
+                <li class="flex items-start"><span class="text-cyan-400 mr-2">➤</span><span>Conception d’affiches professionnelles avec Adobe Photoshop pour des campagnes internes.</span></li>
+                <li class="flex items-start"><span class="text-cyan-400 mr-2">➤</span><span>Clonage et sauvegarde de disques avec Clonezilla, sécurisant les données critiques.</span></li>
+            </ul>
+        </div>
+        <div class="relative ml-6 sm:ml-8 bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50 experience-item opacity-0 translate-y-12">
+            <div class="absolute -left-7 sm:-left-9 w-6 sm:w-8 h-6 sm:h-8 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg animate-pulse">📌</div>
+            <h3 class="text-xl sm:text-2xl font-semibold text-white">Projet Personnel - Développement d’une Calculatrice</h3>
+            <span class="text-gray-400 block text-xs sm:text-sm">Juin 2024 – Juillet 2024</span>
+            <p class="text-gray-300 mt-2 sm:mt-3 italic text-sm sm:text-base">Projet individuel pour renforcer mes compétences en Python</p>
+            <ul class="text-gray-300 mt-2 sm:mt-3 space-y-2 text-sm sm:text-base list-none">
+                <li class="flex items-start"><span class="text-cyan-400 mr-2">➤</span><span>Développement d’une calculatrice CLI avec Python, intégrant des opérations complexes.</span></li>
+                <li class="flex items-start"><span class="text-cyan-400 mr-2">➤</span><span>Gestion des erreurs utilisateur pour une expérience fluide.</span></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Objectifs -->
+<section id="objectifs" class="container mx-auto px-4 sm:px-6 py-12 sm:py-16 relative z-10">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 sm:mb-12 text-cyan-400 animate-bounce">🎯 Objectifs et Ambitions</h2>
+    <p class="text-center text-gray-300 max-w-xl sm:max-w-2xl mx-auto mb-6 sm:mb-8 text-sm sm:text-base">Mon ambition est d’exceller en informatique tout en contribuant à des solutions technologiques innovantes.</p>
+    <div class="space-y-6 max-w-2xl sm:max-w-3xl mx-auto">
+        <div class="flex items-center space-x-4 bg-gray-800 p-4 sm:p-5 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50 objectif-item opacity-0 -translate-x-12">
+            <span class="text-cyan-500 text-2xl sm:text-3xl transition-transform duration-300 hover:scale-125">🚀</span>
+            <div>
+                <h3 class="text-base sm:text-lg font-semibold text-white">Maîtrise avancée du développement frontend</h3>
+                <p class="text-gray-300 text-sm sm:text-base">Approfondir React et Angular pour créer des applications web performantes d’ici fin 2025.</p>
+            </div>
+        </div>
+        <div class="flex items-center space-x-4 bg-gray-800 p-4 sm:p-5 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50 objectif-item opacity-0 translate-x-12">
+            <span class="text-cyan-500 text-2xl sm:text-3xl transition-transform duration-300 hover:scale-125">🌍</span>
+            <div>
+                <h3 class="text-base sm:text-lg font-semibold text-white">Contribution open-source</h3>
+                <p class="text-gray-300 text-sm sm:text-base">Participer à 3 projets open-source majeurs d’ici 2026 pour renforcer mes compétences collaboratives.</p>
+            </div>
+        </div>
+        <div class="flex items-center space-x-4 bg-gray-800 p-4 sm:p-5 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50 objectif-item opacity-0 -translate-x-12">
+            <span class="text-cyan-500 text-2xl sm:text-3xl transition-transform duration-300 hover:scale-125">🏢</span>
+            <div>
+                <h3 class="text-base sm:text-lg font-semibold text-white">Intégration professionnelle</h3>
+                <p class="text-gray-300 text-sm sm:text-base">Rejoindre une entreprise tech innovante en tant que développeuse junior d’ici mi-2025.</p>
+            </div>
+        </div>
+        <div class="flex items-center space-x-4 bg-gray-800 p-4 sm:p-5 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50 objectif-item opacity-0 translate-x-12">
+            <span class="text-cyan-500 text-2xl sm:text-3xl transition-transform duration-300 hover:scale-125">📚</span>
+            <div>
+                <h3 class="text-base sm:text-lg font-semibold text-white">Certification Cloud</h3>
+                <p class="text-gray-300 text-sm sm:text-base">Obtenir une certification AWS ou Google Cloud d’ici 2026 pour élargir mon expertise.</p>
+            </div>
+        </div>
+        <div class="flex items-center space-x-4 bg-gray-800 p-4 sm:p-5 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50 objectif-item opacity-0 -translate-x-12">
+            <span class="text-cyan-500 text-2xl sm:text-3xl transition-transform duration-300 hover:scale-125">🎓</span>
+            <div>
+                <h3 class="text-base sm:text-lg font-semibold text-white">Mentorat</h3>
+                <p class="text-gray-300 text-sm sm:text-base">Devenir mentor pour guider les étudiants en informatique d’ici 2027.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="container mx-auto px-4 sm:px-6 py-12 sm:py-16 relative z-10 bg-gray-900">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-10 sm:mb-12 text-cyan-400 tracking-tight animate-pulse">📞 Contactez-moi</h2>
+    <div class="flex flex-col md:flex-row items-start justify-between max-w-3xl sm:max-w-4xl mx-auto gap-6 sm:gap-8">
+        <div class="md:w-1/2 space-y-4 sm:space-y-6 text-gray-300">
+            <p class="bg-gray-800 p-3 sm:p-4 rounded-xl shadow-md text-center text-sm sm:text-lg font-medium transition duration-300 hover:bg-gray-700">Ouverte aux opportunités de travail, stage ou collaboration.</p>
+            <div class="flex items-center bg-gray-800 p-3 sm:p-4 rounded-xl shadow-md transition duration-300 hover:bg-gray-700">
+                <span class="text-cyan-400 text-xl sm:text-2xl mr-3"><i class="fas fa-user"></i></span>
+                <p class="text-sm sm:text-base"><strong>Nom :</strong> Coura Dieye Diop</p>
+            </div>
+            <div class="flex items-center bg-gray-800 p-3 sm:p-4 rounded-xl shadow-md transition duration-300 hover:bg-gray-700">
+                <span class="text-cyan-400 text-xl sm:text-2xl mr-3"><i class="fas fa-envelope"></i></span>
+                <p class="text-sm sm:text-base"><strong>Email :</strong> <a href="mailto:couradiop731@gmail.com" class="text-cyan-400 hover:text-cyan-300 transition duration-200">couradiop731@gmail.com</a></p>
+            </div>
+            <div class="flex items-center bg-gray-800 p-3 sm:p-4 rounded-xl shadow-md transition duration-300 hover:bg-gray-700">
+                <span class="text-cyan-400 text-xl sm:text-2xl mr-3"><i class="fas fa-phone"></i></span>
+                <p class="text-sm sm:text-base"><strong>Téléphone :</strong> <a href="tel:+221781261386" class="text-cyan-400 hover:text-cyan-300 transition duration-200">+221 78 126 13 86</a></p>
+            </div>
+            <div class="flex items-center bg-gray-800 p-3 sm:p-4 rounded-xl shadow-md transition duration-300 hover:bg-gray-700">
+                <span class="text-cyan-400 text-xl sm:text-2xl mr-3"><i class="fas fa-map-marker-alt"></i></span>
+                <p class="text-sm sm:text-base"><strong>Localisation :</strong> Dakar, Guédiawaye, Gadaye</p>
+            </div>
+        </div>
+        <div class="md:w-1/2 bg-gray-800 p-6 sm:p-8 rounded-xl shadow-lg text-white transition duration-300 hover:shadow-cyan-500/50">
+            <form action="#" method="POST" class="space-y-4 sm:space-y-6">
+                <div>
+                    <label for="name" class="block font-medium mb-2 text-gray-200 text-sm sm:text-base">Nom</label>
+                    <input type="text" id="name" name="name" required class="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-gray-700 text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition duration-200 placeholder-gray-500 text-sm sm:text-base" placeholder="Entrez votre nom" />
+                </div>
+                <div>
+                    <label for="email" class="block font-medium mb-2 text-gray-200 text-sm sm:text-base">Email</label>
+                    <input type="email" id="email" name="email" required class="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-gray-700 text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition duration-200 placeholder-gray-500 text-sm sm:text-base" placeholder="Entrez votre email" />
+                </div>
+                <div>
+                    <label for="message" class="block font-medium mb-2 text-gray-200 text-sm sm:text-base">Message</label>
+                    <textarea id="message" name="message" rows="5" required class="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-gray-700 text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition duration-200 placeholder-gray-500 text-sm sm:text-base" placeholder="Écrivez votre message ici..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-cyan-600 text-white py-2 sm:py-3 rounded-lg font-semibold text-base sm:text-lg hover:bg-cyan-700 transition duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+                    Envoyer <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Pied de page -->
+<footer class="bg-gray-800 text-white py-8 sm:py-10 relative z-10">
+    <div class="container mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+            <div>
+                <h3 class="text-base sm:text-lg font-semibold mb-4 text-cyan-400">À propos</h3>
+                <p class="text-gray-300 text-xs sm:text-sm">Développeuse web passionnée, spécialisée en React, TypeScript et création de sites modernes.</p>
+            </div>
+            <div>
+                <h3 class="text-base sm:text-lg font-semibold mb-4 text-cyan-400">Navigation</h3>
+                <nav class="flex flex-col space-y-2 text-gray-300 text-xs sm:text-sm">
+                    <a href="#" class="hover:text-cyan-400 transition">🏠 Accueil</a>
+                    <a href="#formations" class="hover:text-cyan-400 transition">🎓 Formation</a>
+                    <a href="#competences" class="hover:text-cyan-400 transition">🛠️ Compétences</a>
+                    <a href="#services" class="hover:text-cyan-400 transition">💼 Services</a>
+                    <a href="#projets" class="hover:text-cyan-400 transition">🎯 Projets</a>
+                    <a href="#experiences" class="hover:text-cyan-400 transition">🎯 Expérience</a>
+                    <a href="#objectifs" class="hover:text-cyan-400 transition">🚀 Objectifs</a>
+                    <a href="#contact" class="hover:text-cyan-400 transition">📞 Contact</a>
+                </nav>
+            </div>
+            <div>
+                <h3 class="text-base sm:text-lg font-semibold mb-4 text-cyan-400">Contact</h3>
+                <p class="text-gray-300 text-xs sm:text-sm">📍 Dakar, Sénégal</p>
+                <p class="text-gray-300 text-xs sm:text-sm">📧 <a href="mailto:couradiop731@gmail.com" class="hover:text-cyan-400 transition">couradiop731@gmail.com</a></p>
+                <p class="text-gray-300 text-xs sm:text-sm">📞 <a href="tel:+221781261386" class="hover:text-cyan-400 transition">+221 78 126 13 86</a></p>
+            </div>
+        </div>
+        <hr class="my-4 sm:my-6 border-gray-700">
+        <div class="flex flex-col sm:flex-row justify-between items-center">
+            <div class="flex space-x-3 sm:space-x-4 text-lg sm:text-xl">
+                <a href="https://www.linkedin.com/in/coura-dieye-diop-3b8958337/" target="_blank" class="text-blue-400 hover:scale-125 transition"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/CuraJoop" target="_blank" class="text-gray-400 hover:scale-125 transition"><i class="fab fa-github"></i></a>
+                <a href="https://wa.me/781261386" target="_blank" class="text-green-400 hover:scale-125 transition"><i class="fab fa-whatsapp"></i></a>
                 <a href="https://twitter.com/cura" target="_blank" class="text-blue-400 hover:scale-125 transition"><i class="fab fa-twitter"></i></a>
-                <a href="https://facebook.com/curadiop" target="_blank" class="text-blue-600 hover:scale-125 transition"><i class="fab fa-facebook"></i></a>
-                <a href="https://instagram.com/coura_dieye_diop" target="_blank" class="text-pink-500 hover:scale-125 transition"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com/curadiop" target="_blank" class="text-blue-500 hover:scale-125 transition"><i class="fab fa-facebook"></i></a>
+                <a href="https://instagram.com/coura_dieye_diop" target="_blank" class="text-pink-400 hover:scale-125 transition"><i class="fab fa-instagram"></i></a>
             </div>
+            <a href="#" class="text-cyan-400 hover:text-cyan-300 transition text-xs sm:text-sm flex items-center mt-4 sm:mt-0"><i class="fas fa-arrow-up mr-2"></i> Retour en haut</a>
         </div>
-    </main>
-
-    <!-- Formations -->
-    <section id="formations" class="container mx-auto px-4 sm:px-6 py-12 sm:py-16 relative z-10">
-        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 sm:mb-12 text-cyan-400">🎓 Mes Formations</h2>
-        <div class="flex justify-center mb-6 sm:mb-8">
-            <img src="images/graduation hats.gif" alt="GIF d'éducation" class="w-24 sm:w-32 h-24 sm:h-32 object-cover rounded-lg">
-        </div>
-        <div class="relative flex flex-col items-center space-y-10 sm:space-y-12">
-            <div class="absolute w-1 bg-cyan-500 h-full z-0 opacity-50 hidden sm:block"></div>
-            <div class="formation-item w-full flex flex-col sm:flex-row-reverse items-center opacity-0 translate-x-12 transition-all duration-700 ease-out">
-                <div class="w-full sm:w-1/2 text-center sm:text-left pl-0 sm:pl-6 mt-4 sm:mt-0">
-                    <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-start">
-                        <i class="fas fa-graduation-cap text-cyan-400 text-xl sm:text-2xl mr-0 sm:mr-2 mb-2 sm:mb-0"></i>
-                        <div>
-                            <h3 class="text-base sm:text-lg font-semibold text-white">Formation en Data Analytics - Force-N</h3>
-                            <p class="text-gray-400 text-sm sm:text-base">2025</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-4 h-4 bg-cyan-500 rounded-full z-10"></div>
-                <div class="w-full sm:w-1/2"></div>
-            </div>
-            <div class="formation-item w-full flex flex-col sm:flex-row items-center opacity-0 -translate-x-12 transition-all duration-700 ease-out">
-                <div class="w-full sm:w-1/2 text-center sm:text-right pr-0 sm:pr-6 mt-4 sm:mt-0">
-                    <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-end">
-                        <i class="fas fa-graduation-cap text-cyan-400 text-xl sm:text-2xl mr-0 sm:mr-2 mb-2 sm:mb-0"></i>
-                        <div>
-                            <h3 class="text-base sm:text-lg font-semibold text-white">Licence 2 Génie Informatique - UNIPRO</h3>
-                            <p class="text-gray-400 text-sm sm:text-base">2024-2025</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-4 h-4 bg-cyan-500 rounded-full z-10"></div>
-                <div class="w-full sm:w-1/2"></div>
-            </div>
-            <div class="formation-item w-full flex flex-col sm:flex-row-reverse items-center opacity-0 translate-x-12 transition-all duration-700 ease-out">
-                <div class="w-full sm:w-1/2 text-center sm:text-left pl-0 sm:pl-6 mt-4 sm:mt-0">
-                    <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-start">
-                        <i class="fas fa-graduation-cap text-cyan-400 text-xl sm:text-2xl mr-0 sm:mr-2 mb-2 sm:mb-0"></i>
-                        <div>
-                            <h3 class="text-base sm:text-lg font-semibold text-white">Licence 2 Mathématiques Appliquées et Informatique - UNCHK</h3>
-                            <p class="text-gray-400 text-sm sm:text-base">2024-2025</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-4 h-4 bg-cyan-500 rounded-full z-10"></div>
-                <div class="w-full sm:w-1/2"></div>
-            </div>
-            <div class="formation-item w-full flex flex-col sm:flex-row items-center opacity-0 -translate-x-12 transition-all duration-700 ease-out">
-                <div class="w-full sm:w-1/2 text-center sm:text-right pr-0 sm:pr-6 mt-4 sm:mt-0">
-                    <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-end">
-                        <i class="fas fa-graduation-cap text-cyan-400 text-xl sm:text-2xl mr-0 sm:mr-2 mb-2 sm:mb-0"></i>
-                        <div>
-                            <h3 class="text-base sm:text-lg font-semibold text-white">Licence 1 Génie Informatique - UNIPRO</h3>
-                            <p class="text-gray-400 text-sm sm:text-base">2023-2024</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-4 h-4 bg-cyan-500 rounded-full z-10"></div>
-                <div class="w-full sm:w-1/2"></div>
-            </div>
-            <div class="formation-item w-full flex flex-col sm:flex-row-reverse items-center opacity-0 translate-x-12 transition-all duration-700 ease-out">
-                <div class="w-full sm:w-1/2 text-center sm:text-left pl-0 sm:pl-6 mt-4 sm:mt-0">
-                    <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-start">
-                        <i class="fas fa-graduation-cap text-cyan-400 text-xl sm:text-2xl mr-0 sm:mr-2 mb-2 sm:mb-0"></i>
-                        <div>
-                            <h3 class="text-base sm:text-lg font-semibold text-white">Licence 1 Mathématiques Appliquées et Informatique - UNCHK</h3>
-                            <p class="text-gray-400 text-sm sm:text-base">2023-2024</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-4 h-4 bg-cyan-500 rounded-full z-10"></div>
-                <div class="w-full sm:w-1/2"></div>
-            </div>
-            <div class="formation-item w-full flex flex-col sm:flex-row items-center opacity-0 -translate-x-12 transition-all duration-700 ease-out">
-                <div class="w-full sm:w-1/2 text-center sm:text-right pr-0 sm:pr-6 mt-4 sm:mt-0">
-                    <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-end">
-                        <i class="fas fa-graduation-cap text-cyan-400 text-xl sm:text-2xl mr-0 sm:mr-2 mb-2 sm:mb-0"></i>
-                        <div>
-                            <h3 class="text-base sm:text-lg font-semibold text-white">Baccalauréat Scientifique - Groupe Scolaire Abdou Latif Gueye</h3>
-                            <p class="text-gray-400 text-sm sm:text-base">2011-2022</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-4 h-4 bg-cyan-500 rounded-full z-10"></div>
-                <div class="w-full sm:w-1/2"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Compétences -->
-    <section id="competences" class="container mx-auto px-4 sm:px-6 py-12 sm:py-16 relative z-10">
-        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 sm:mb-12 text-cyan-400 animate-bounce">🚀 Mes Compétences</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <div class="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg transform transition duration-500 hover:shadow-cyan-500/50 hover:-translate-y-2">
-                <div class="flex items-center mb-4">
-                    <i class="fas fa-html5 text-2xl sm:text-3xl text-orange-500 mr-3"></i>
-                    <h3 class="text-lg sm:text-xl font-semibold text-white">Développement Web</h3>
-                </div>
-                <p class="text-gray-400 text-sm sm:text-base mb-2">Création de sites modernes et responsives.</p>
-                <p class="text-cyan-400 text-xs sm:text-sm mb-4">HTML, CSS, JavaScript, Tailwind CSS, React, Bootstrap</p>
-                <div class="w-full bg-gray-700 rounded-full h-2 sm:h-3 overflow-hidden">
-                    <div class="bg-orange-500 h-2 sm:h-3 rounded-full transition-all duration-1000 ease-out" style="width: 0%;" data-width="95%"></div>
-                </div>
-            </div>
-            <div class="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg transform transition duration-500 hover:shadow-cyan-500/50 hover:-translate-y-2">
-                <div class="flex items-center mb-4">
-                    <i class="fas fa-code text-2xl sm:text-3xl text-green-500 mr-3"></i>
-                    <h3 class="text-lg sm:text-xl font-semibold text-white">Programmation</h3>
-                </div>
-                <p class="text-gray-400 text-sm sm:text-base mb-2">Développement d'algorithmes et logique.</p>
-                <p class="text-cyan-400 text-xs sm:text-sm mb-4">Python, C, Java, TypeScript, JavaScript</p>
-                <div class="w-full bg-gray-700 rounded-full h-2 sm:h-3 overflow-hidden">
-                    <div class="bg-green-500 h-2 sm:h-3 rounded-full transition-all duration-1000 ease-out" style="width: 0%;" data-width="75%"></div>
-                </div>
-            </div>
-            <div class="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg transform transition duration-500 hover:shadow-cyan-500/50 hover:-translate-y-2">
-                <div class="flex items-center mb-4">
-                    <i class="fas fa-tools text-2xl sm:text-3xl text-yellow-500 mr-3"></i>
-                    <h3 class="text-lg sm:text-xl font-semibold text-white">Outils & Logiciels</h3>
-                </div>
-                <p class="text-gray-400 text-sm sm:text-base mb-2">Maîtrise des environnements de développement.</p>
-                <p class="text-cyan-400 text-xs sm:text-sm mb-4">VS Code, WordPress, Git, GitHub, PyCharm, XAMPP, WAMP</p>
-                <div class="w-full bg-gray-700 rounded-full h-2 sm:h-3 overflow-hidden">
-                    <div class="bg-yellow-500 h-2 sm:h-3 rounded-full transition-all duration-1000 ease-out" style="width: 0%;" data-width="85%"></div>
-                </div>
-            </div>
-            <div class="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg transform transition duration-500 hover:shadow-cyan-500/50 hover:-translate-y-2">
-                <div class="flex items-center mb-4">
-                    <i class="fas fa-laptop text-2xl sm:text-3xl text-purple-500 mr-3"></i>
-                    <h3 class="text-lg sm:text-xl font-semibold text-white">Systèmes d'exploitation</h3>
-                </div>
-                <p class="text-gray-400 text-sm sm:text-base mb-2">Gestion et configuration des OS.</p>
-                <p class="text-cyan-400 text-xs sm:text-sm mb-4">Windows, Linux</p>
-                <div class="w-full bg-gray-700 rounded-full h-2 sm:h-3 overflow-hidden">
-                    <div class="bg-purple-500 h-2 sm:h-3 rounded-full transition-all duration-1000 ease-out" style="width: 0%;" data-width="80%"></div>
-                </div>
-            </div>
-            <div class="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg transform transition duration-500 hover:shadow-cyan-500/50 hover:-translate-y-2">
-                <div class="flex items-center mb-4">
-                    <i class="fas fa-users text-2xl sm:text-3xl text-pink-500 mr-3"></i>
-                    <h3 class="text-lg sm:text-xl font-semibold text-white">Soft Skills</h3>
-                </div>
-                <p class="text-gray-400 text-sm sm:text-base mb-2">Compétences humaines essentielles.</p>
-                <p class="text-cyan-400 text-xs sm:text-sm mb-4">Autonomie, Créativité, Travail d'équipe</p>
-                <div class="w-full bg-gray-700 rounded-full h-2 sm:h-3 overflow-hidden">
-                    <div class="bg-pink-500 h-2 sm:h-3 rounded-full transition-all duration-1000 ease-out" style="width: 0%;" data-width="90%"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services -->
-    <section id="services" class="container mx-auto px-4 sm:px-6 py-12 sm:py-16 relative z-10">
-        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 sm:mb-12 text-cyan-400">💼 Mes Services</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <div class="relative bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50">
-                <img src="images/T3.avif" alt="Site vitrine" class="w-full h-32 sm:h-40 object-cover rounded-lg mb-4 transition-opacity duration-300 hover:opacity-30">
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-gray-900/80 rounded-lg">
-                    <p class="text-white text-center p-2 sm:p-4 text-sm sm:text-base">Sites vitrine modernes et responsives.</p>
-                </div>
-                <h3 class="text-lg sm:text-xl font-semibold text-white mb-2">🌐 Création de sites web</h3>
-                <p class="text-gray-400 text-sm sm:text-base mb-4">Vitrine, e-commerce, blogs adaptés à vos besoins.</p>
-            </div>
-            <div class="relative bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50">
-                <img src="images/T55.png" alt="Développement Web" class="w-full h-32 sm:h-40 object-cover rounded-lg mb-4 transition-opacity duration-300 hover:opacity-30">
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-gray-900/80 rounded-lg">
-                    <p class="text-white text-center p-2 sm:p-4 text-sm sm:text-base">Développement d’applications web sur mesure.</p>
-                </div>
-                <h3 class="text-lg sm:text-xl font-semibold text-white mb-2">💻 Développement Web</h3>
-                <p class="text-gray-400 text-sm sm:text-base mb-4">Applications web sur mesure, API et intégrations.</p>
-            </div>
-            <div class="relative bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50">
-                <img src="images/T1.webp" alt="Design de logo" class="w-full h-32 sm:h-40 object-cover rounded-lg mb-4 transition-opacity duration-300 hover:opacity-30">
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-gray-900/80 rounded-lg">
-                    <p class="text-white text-center p-2 sm:p-4 text-sm sm:text-base">Logos créatifs pour une identité forte.</p>
-                </div>
-                <h3 class="text-lg sm:text-xl font-semibold text-white mb-2">📊 Design de logo</h3>
-                <p class="text-gray-400 text-sm sm:text-base mb-4">Logos uniques et professionnels.</p>
-            </div>
-            <div class="relative bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50">
-                <img src="images/T4.avif" alt="Architecture systèmes" class="w-full h-32 sm:h-40 object-cover rounded-lg mb-4 transition-opacity duration-300 hover:opacity-30">
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-gray-900/80 rounded-lg">
-                    <p class="text-white text-center p-2 sm:p-4 text-sm sm:text-base">Conception de systèmes robustes.</p>
-                </div>
-                <h3 class="text-lg sm:text-xl font-semibold text-white mb-2">🎓 Étude et architecture des systèmes</h3>
-                <p class="text-gray-400 text-sm sm:text-base mb-4">Conception d'architectures systèmes robustes.</p>
-            </div>
-            <div class="relative bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50">
-                <img src="images/T7.jpeg" alt="Design Graphique" class="w-full h-32 sm:h-40 object-cover rounded-lg mb-4 transition-opacity duration-300 hover:opacity-30">
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-gray-900/80 rounded-lg">
-                    <p class="text-white text-center p-2 sm:p-4 text-sm sm:text-base">Interfaces modernes et esthétiques.</p>
-                </div>
-                <h3 class="text-lg sm:text-xl font-semibold text-white mb-2">🎨 Design Graphique</h3>
-                <p class="text-gray-400 text-sm sm:text-base mb-4">Interfaces modernes et intuitives.</p>
-            </div>
-            <div class="relative bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50">
-                <img src="images/T6.avif" alt="Applications personnalisées" class="w-full h-32 sm:h-40 object-cover rounded-lg mb-4 transition-opacity duration-300 hover:opacity-30">
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-gray-900/80 rounded-lg">
-                    <p class="text-white text-center p-2 sm:p-4 text-sm sm:text-base">Applications sur mesure sécurisées.</p>
-                </div>
-                <h3 class="text-lg sm:text-xl font-semibold text-white mb-2">🛠️ Création d'applications</h3>
-                <p class="text-gray-400 text-sm sm:text-base mb-4">Applications personnalisées et sécurisées.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projets -->
-    <section id="projets" class="container mx-auto px-4 sm:px-6 py-12 sm:py-16 relative z-10">
-        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 sm:mb-12 text-cyan-400">🎯 Mes Projets Réalisés</h2>
-        <div class="flex flex-wrap justify-center mb-6 sm:mb-8 space-x-2 sm:space-x-4">
-            <button class="filter-btn px-3 py-2 sm:px-4 sm:py-2 bg-cyan-500 text-white rounded-full hover:bg-cyan-600 transition duration-300 text-sm sm:text-base active" data-filter="all">Tout</button>
-            <button class="filter-btn px-3 py-2 sm:px-4 sm:py-2 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition duration-300 text-sm sm:text-base" data-filter="frontend">Frontend</button>
-            <button class="filter-btn px-3 py-2 sm:px-4 sm:py-2 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition duration-300 text-sm sm:text-base" data-filter="backend">Backend</button>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="project-grid">
-            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="frontend">
-                <img src="images/p1.png" alt="Plateforme Immobilière" class="w-full h-40 sm:h-48 object-cover transition-transform duration-300 hover:scale-105">
-                <div class="p-4 sm:p-6">
-                    <h3 class="text-lg sm:text-xl font-bold text-white">🏡 Plateforme Immobilière</h3>
-                    <p class="text-gray-400 text-sm sm:text-base mt-2">Présentation de logements avec inscription.</p>
-                    <a href="mactaImo/acceuil.html" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition text-sm sm:text-base">Voir plus →</a>
-                </div>
-            </div>
-            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="backend">
-                <img src="images/P2.png" alt="Calculateur IMC" class="w-full h-40 sm:h-48 object-cover transition-transform duration-300 hover:scale-105">
-                <div class="p-4 sm:p-6">
-                    <h3 class="text-lg sm:text-xl font-bold text-white">⚖️ Calculateur IMC</h3>
-                    <p class="text-gray-400 text-sm sm:text-base mt-2">Calcul de l'indice de masse corporelle.</p>
-                    <a href="IMC_Coura Dieye Diop/index.html" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition text-sm sm:text-base">Voir plus →</a>
-                </div>
-            </div>
-            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="frontend">
-                <img src="images/p3.png" alt="Site de Boulangerie" class="w-full h-40 sm:h-48 object-cover transition-transform duration-300 hover:scale-105">
-                <div class="p-4 sm:p-6">
-                    <h3 class="text-lg sm:text-xl font-bold text-white">🥐 Site de Boulangerie</h3>
-                    <p class="text-gray-400 text-sm sm:text-base mt-2">Vitrine avec commande de produits.</p>
-                    <a href="CDD/burger.html" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition text-sm sm:text-base">Voir plus →</a>
-                </div>
-            </div>
-            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="frontend">
-                <img src="images/p4.png" alt="Agence de Voyage" class="w-full h-40 sm:h-48 object-cover transition-transform duration-300 hover:scale-105">
-                <div class="p-4 sm:p-6">
-                    <h3 class="text-lg sm:text-xl font-bold text-white">✈️ Agence de Voyage</h3>
-                    <p class="text-gray-400 text-sm sm:text-base mt-2">Réservation de voyages.</p>
-                    <a href="Agence de voyage/acceuil.html" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition text-sm sm:text-base">Voir plus →</a>
-                </div>
-            </div>
-            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="frontend">
-                <img src="images/p5.png" alt="Blog sur le Voile" class="w-full h-40 sm:h-48 object-cover transition-transform duration-300 hover:scale-105">
-                <div class="p-4 sm:p-6">
-                    <h3 class="text-lg sm:text-xl font-bold text-white">🧕 Blog sur le Voile Féminin</h3>
-                    <p class="text-gray-400 text-sm sm:text-base mt-2">Exploration du voile féminin.</p>
-                    <a href="CDD/monblog.html" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition text-sm sm:text-base">Voir plus →</a>
-                </div>
-            </div>
-            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="frontend">
-                <img src="images/projet6.png" alt="Portfolio Personnel" class="w-full h-40 sm:h-48 object-cover transition-transform duration-300 hover:scale-105">
-                <div class="p-4 sm:p-6">
-                    <h3 class="text-lg sm:text-xl font-bold text-white">💼 Portfolio Personnel</h3>
-                    <p class="text-gray-400 text-sm sm:text-base mt-2">Présentation de mes projets.</p>
-                    <a href="projets/portfolio.html" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition text-sm sm:text-base">Voir plus →</a>
-                </div>
-            </div>
-            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="backend">
-                <img src="images/P7.png" alt="Site de Stationnement" class="w-full h-40 sm:h-48 object-cover transition-transform duration-300 hover:scale-105">
-                <div class="p-4 sm:p-6">
-                    <h3 class="text-lg sm:text-xl font-bold text-white">🚗 Stationnement</h3>
-                    <p class="text-gray-400 text-sm sm:text-base mt-2">Une plateforme intuitive pour gérer et localiser facilement les places de stationnement.</p>
-                    <a href="stationnement/stationnement/index.html" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition text-sm sm:text-base">Voir plus →</a>
-                </div>
-            </div>
-            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 relative project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="backend">
-                <img src="images/p8.png" alt="Application de Gestion de Bibliothèque" class="w-full h-40 sm:h-48 object-cover transition-transform duration-300 hover:scale-105 cursor-pointer project-preview">
-                <div class="absolute inset-0 bg-gray-900/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6">
-                    <p class="text-white text-center text-xs sm:text-sm">Une application backend robuste développée pour gérer efficacement une bibliothèque : suivi des livres, gestion des emprunts et retours, et administration des utilisateurs.</p>
-                </div>
-                <div class="p-4 sm:p-6">
-                    <h3 class="text-lg sm:text-xl font-bold text-white">📚 Gestion de Bibliothèque</h3>
-                    <p class="text-gray-400 text-sm sm:text-base mt-2">Application pour gérer les livres et emprunts.</p>
-                </div>
-            </div>
-            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 relative project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="backend">
-                <img src="images/p9.png" alt="Calculatrice avec Python" class="w-full h-40 sm:h-48 object-cover transition-transform duration-300 hover:scale-105 cursor-pointer project-preview">
-                <div class="absolute inset-0 bg-gray-900/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6">
-                    <p class="text-white text-center text-xs sm:text-sm">Une calculatrice codée en Python avec interface CLI, offrant des opérations de base (addition, soustraction, multiplication, division) et une gestion simple des erreurs.</p>
-                </div>
-                <div class="p-4 sm:p-6">
-                    <h3 class="text-lg sm:text-xl font-bold text-white">🧮 Calculatrice Python</h3>
-                    <p class="text-gray-400 text-sm sm:text-base mt-2">Calculatrice simple développée en Python.</p>
-                </div>
-            </div>
-            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 relative project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="backend">
-                <img src="images/p11.png" alt="Vérificateur de Nombre Premier" class="w-full h-40 sm:h-48 object-cover transition-transform duration-300 hover:scale-105 cursor-pointer project-preview">
-                <div class="absolute inset-0 bg-gray-900/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6">
-                    <p class="text-white text-center text-xs sm:text-sm">Un programme backend en Python qui permet à l'utilisateur d'entrer un nombre et vérifie s'il est premier, avec une logique optimisée pour tester la primalité.</p>
-                </div>
-                <div class="p-4 sm:p-6">
-                    <h3 class="text-lg sm:text-xl font-bold text-white">🔢 Vérificateur de Nombre Premier</h3>
-                    <p class="text-gray-400 text-sm sm:text-base mt-2">Programme pour vérifier si un nombre est premier.</p>
-                </div>
-            </div>
-            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 relative project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="backend">
-                <img src="images/p12.png" alt="Jeu de Hasard" class="w-full h-40 sm:h-48 object-cover transition-transform duration-300 hover:scale-105 cursor-pointer project-preview">
-                <div class="absolute inset-0 bg-gray-900/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6">
-                    <p class="text-white text-center text-xs sm:text-sm">Un jeu de hasard interactif développé en Python, où les joueurs testent leur chance avec des tirages aléatoires et des règles simples pour une expérience amusante.</p>
-                </div>
-                <div class="p-4 sm:p-6">
-                    <h3 class="text-lg sm:text-xl font-bold text-white">🎲 Bienvenue au Jeu de Hasard</h3>
-                    <p class="text-gray-400 text-sm sm:text-base mt-2">Jeu interactif basé sur le hasard.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Expériences -->
-    <section id="experiences" class="container mx-auto px-4 sm:px-6 py-12 sm:py-16 relative z-10">
-        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 sm:mb-12 text-cyan-400 animate-bounce">💼 Expérience Professionnelle</h2>
-        <div class="relative border-l-4 border-cyan-500 ml-4 sm:ml-6 space-y-10 sm:space-y-12">
-            <div class="relative ml-6 sm:ml-8 bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50 experience-item opacity-0 translate-y-12">
-                <div class="absolute -left-7 sm:-left-9 w-6 sm:w-8 h-6 sm:h-8 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg animate-pulse">📌</div>
-                <h3 class="text-xl sm:text-2xl font-semibold text-white">Stagiaire - TGI, Dakar</h3>
-                <span class="text-gray-400 block text-xs sm:text-sm">09 Sept. 2024 – 04 Oct. 2024</span>
-                <p class="text-gray-300 mt-2 sm:mt-3 italic text-sm sm:text-base">Entreprise spécialisée en maintenance informatique et solutions numériques</p>
-                <ul class="text-gray-300 mt-2 sm:mt-3 space-y-2 text-sm sm:text-base list-none">
-                    <li class="flex items-start"><span class="text-cyan-400 mr-2">➤</span><span>Maintenance d’iMac : diagnostic précis et remplacement de composants défectueux, réduisant les temps d'arrêt.</span></li>
-                    <li class="flex items-start"><span class="text-cyan-400 mr-2">➤</span><span>Développement d’un site e-commerce (CDD SHOP) avec WordPress, intégrant un design responsive.</span></li>
-                    <li class="flex items-start"><span class="text-cyan-400 mr-2">➤</span><span>Installation et configuration de systèmes Windows/Linux pour optimiser les performances.</span></li>
-                    <li class="flex items-start"><span class="text-cyan-400 mr-2">➤</span><span>Conception d’affiches professionnelles avec Adobe Photoshop pour des campagnes internes.</span></li>
-                    <li class="flex items-start"><span class="text-cyan-400 mr-2">➤</span><span>Clonage et sauvegarde de disques avec Clonezilla, sécurisant les données critiques.</span></li>
-                </ul>
-            </div>
-            <div class="relative ml-6 sm:ml-8 bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50 experience-item opacity-0 translate-y-12">
-                <div class="absolute -left-7 sm:-left-9 w-6 sm:w-8 h-6 sm:h-8 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg animate-pulse">📌</div>
-                <h3 class="text-xl sm:text-2xl font-semibold text-white">Projet Personnel - Développement d’une Calculatrice</h3>
-                <span class="text-gray-400 block text-xs sm:text-sm">Juin 2024 – Juillet 2024</span>
-                <p class="text-gray-300 mt-2 sm:mt-3 italic text-sm sm:text-base">Projet individuel pour renforcer mes compétences en Python</p>
-                <ul class="text-gray-300 mt-2 sm:mt-3 space-y-2 text-sm sm:text-base list-none">
-                    <li class="flex items-start"><span class="text-cyan-400 mr-2">➤</span><span>Développement d’une calculatrice CLI avec Python, intégrant des opérations complexes.</span></li>
-                    <li class="flex items-start"><span class="text-cyan-400 mr-2">➤</span><span>Gestion des erreurs utilisateur pour une expérience fluide.</span></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Objectifs -->
-    <section id="objectifs" class="container mx-auto px-4 sm:px-6 py-12 sm:py-16 relative z-10">
-        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 sm:mb-12 text-cyan-400 animate-bounce">🎯 Objectifs et Ambitions</h2>
-        <p class="text-center text-gray-300 max-w-xl sm:max-w-2xl mx-auto mb-6 sm:mb-8 text-sm sm:text-base">Mon ambition est d’exceller en informatique tout en contribuant à des solutions technologiques innovantes.</p>
-        <div class="space-y-6 max-w-2xl sm:max-w-3xl mx-auto">
-            <div class="flex items-center space-x-4 bg-gray-800 p-4 sm:p-5 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50 objectif-item opacity-0 -translate-x-12">
-                <span class="text-cyan-500 text-2xl sm:text-3xl transition-transform duration-300 hover:scale-125">🚀</span>
-                <div>
-                    <h3 class="text-base sm:text-lg font-semibold text-white">Maîtrise avancée du développement frontend</h3>
-                    <p class="text-gray-300 text-sm sm:text-base">Approfondir React et Angular pour créer des applications web performantes d’ici fin 2025.</p>
-                </div>
-            </div>
-            <div class="flex items-center space-x-4 bg-gray-800 p-4 sm:p-5 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50 objectif-item opacity-0 translate-x-12">
-                <span class="text-cyan-500 text-2xl sm:text-3xl transition-transform duration-300 hover:scale-125">🌍</span>
-                <div>
-                    <h3 class="text-base sm:text-lg font-semibold text-white">Contribution open-source</h3>
-                    <p class="text-gray-300 text-sm sm:text-base">Participer à 3 projets open-source majeurs d’ici 2026 pour renforcer mes compétences collaboratives.</p>
-                </div>
-            </div>
-            <div class="flex items-center space-x-4 bg-gray-800 p-4 sm:p-5 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50 objectif-item opacity-0 -translate-x-12">
-                <span class="text-cyan-500 text-2xl sm:text-3xl transition-transform duration-300 hover:scale-125">🏢</span>
-                <div>
-                    <h3 class="text-base sm:text-lg font-semibold text-white">Intégration professionnelle</h3>
-                    <p class="text-gray-300 text-sm sm:text-base">Rejoindre une entreprise tech innovante en tant que développeuse junior d’ici mi-2025.</p>
-                </div>
-            </div>
-            <div class="flex items-center space-x-4 bg-gray-800 p-4 sm:p-5 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50 objectif-item opacity-0 translate-x-12">
-                <span class="text-cyan-500 text-2xl sm:text-3xl transition-transform duration-300 hover:scale-125">📚</span>
-                <div>
-                    <h3 class="text-base sm:text-lg font-semibold text-white">Certification Cloud</h3>
-                    <p class="text-gray-300 text-sm sm:text-base">Obtenir une certification AWS ou Google Cloud d’ici 2026 pour élargir mon expertise.</p>
-                </div>
-            </div>
-            <div class="flex items-center space-x-4 bg-gray-800 p-4 sm:p-5 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50 objectif-item opacity-0 -translate-x-12">
-                <span class="text-cyan-500 text-2xl sm:text-3xl transition-transform duration-300 hover:scale-125">🎓</span>
-                <div>
-                    <h3 class="text-base sm:text-lg font-semibold text-white">Mentorat</h3>
-                    <p class="text-gray-300 text-sm sm:text-base">Devenir mentor pour guider les étudiants en informatique d’ici 2027.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="container mx-auto px-4 sm:px-6 py-12 sm:py-16 relative z-10 bg-gray-900">
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-10 sm:mb-12 text-cyan-400 tracking-tight animate-pulse">📞 Contactez-moi</h2>
-        <div class="flex flex-col md:flex-row items-start justify-between max-w-3xl sm:max-w-4xl mx-auto gap-6 sm:gap-8">
-            <div class="md:w-1/2 space-y-4 sm:space-y-6 text-gray-300">
-                <p class="bg-gray-800 p-3 sm:p-4 rounded-xl shadow-md text-center text-sm sm:text-lg font-medium transition duration-300 hover:bg-gray-700">Ouverte aux opportunités de travail, stage ou collaboration.</p>
-                <div class="flex items-center bg-gray-800 p-3 sm:p-4 rounded-xl shadow-md transition duration-300 hover:bg-gray-700">
-                    <span class="text-cyan-400 text-xl sm:text-2xl mr-3"><i class="fas fa-user"></i></span>
-                    <p class="text-sm sm:text-base"><strong>Nom :</strong> Coura Dieye Diop</p>
-                </div>
-                <div class="flex items-center bg-gray-800 p-3 sm:p-4 rounded-xl shadow-md transition duration-300 hover:bg-gray-700">
-                    <span class="text-cyan-400 text-xl sm:text-2xl mr-3"><i class="fas fa-envelope"></i></span>
-                    <p class="text-sm sm:text-base"><strong>Email :</strong> <a href="mailto:couradiop731@gmail.com" class="text-cyan-400 hover:text-cyan-300 transition duration-200">couradiop731@gmail.com</a></p>
-                </div>
-                <div class="flex items-center bg-gray-800 p-3 sm:p-4 rounded-xl shadow-md transition duration-300 hover:bg-gray-700">
-                    <span class="text-cyan-400 text-xl sm:text-2xl mr-3"><i class="fas fa-phone"></i></span>
-                    <p class="text-sm sm:text-base"><strong>Téléphone :</strong> <a href="tel:+221781261386" class="text-cyan-400 hover:text-cyan-300 transition duration-200">+221 78 126 13 86</a></p>
-                </div>
-                <div class="flex items-center bg-gray-800 p-3 sm:p-4 rounded-xl shadow-md transition duration-300 hover:bg-gray-700">
-                    <span class="text-cyan-400 text-xl sm:text-2xl mr-3"><i class="fas fa-map-marker-alt"></i></span>
-                    <p class="text-sm sm:text-base"><strong>Localisation :</strong> Dakar, Guédiawaye, Gadaye</p>
-                </div>
-            </div>
-            <div class="md:w-1/2 bg-gray-800 p-6 sm:p-8 rounded-xl shadow-lg text-white transition duration-300 hover:shadow-cyan-500/50">
-                <form action="#" method="POST" class="space-y-4 sm:space-y-6">
-                    <div>
-                        <label for="name" class="block font-medium mb-2 text-gray-200 text-sm sm:text-base">Nom</label>
-                        <input type="text" id="name" name="name" required class="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-gray-700 text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition duration-200 placeholder-gray-500 text-sm sm:text-base" placeholder="Entrez votre nom" />
-                    </div>
-                    <div>
-                        <label for="email" class="block font-medium mb-2 text-gray-200 text-sm sm:text-base">Email</label>
-                        <input type="email" id="email" name="email" required class="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-gray-700 text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition duration-200 placeholder-gray-500 text-sm sm:text-base" placeholder="Entrez votre email" />
-                    </div>
-                    <div>
-                        <label for="message" class="block font-medium mb-2 text-gray-200 text-sm sm:text-base">Message</label>
-                        <textarea id="message" name="message" rows="5" required class="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-gray-700 text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition duration-200 placeholder-gray-500 text-sm sm:text-base" placeholder="Écrivez votre message ici..."></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-cyan-600 text-white py-2 sm:py-3 rounded-lg font-semibold text-base sm:text-lg hover:bg-cyan-700 transition duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2">
-                        Envoyer <i class="fas fa-paper-plane"></i>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pied de page -->
-    <footer class="bg-gray-800 text-white py-8 sm:py-10 relative z-10">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-                <div>
-                    <h3 class="text-base sm:text-lg font-semibold mb-4 text-cyan-400">À propos</h3>
-                    <p class="text-gray-300 text-xs sm:text-sm">Développeuse web passionnée, spécialisée en React, TypeScript et création de sites modernes.</p>
-                </div>
-                <div>
-                    <h3 class="text-base sm:text-lg font-semibold mb-4 text-cyan-400">Navigation</h3>
-                    <nav class="flex flex-col space-y-2 text-gray-300 text-xs sm:text-sm">
-                        <a href="#" class="hover:text-cyan-400 transition">🏠 Accueil</a>
-                        <a href="#formations" class="hover:text-cyan-400 transition">🎓 Formation</a>
-                        <a href="#competences" class="hover:text-cyan-400 transition">🛠️ Compétences</a>
-                        <a href="#services" class="hover:text-cyan-400 transition">💼 Services</a>
-                        <a href="#projets" class="hover:text-cyan-400 transition">🎯 Projets</a>
-                        <a href="#experiences" class="hover:text-cyan-400 transition">🎯 Expérience</a>
-                        <a href="#objectifs" class="hover:text-cyan-400 transition">🚀 Objectifs</a>
-                        <a href="#contact" class="hover:text-cyan-400 transition">📞 Contact</a>
-                    </nav>
-                </div>
-                <div>
-                    <h3 class="text-base sm:text-lg font-semibold mb-4 text-cyan-400">Contact</h3>
-                    <p class="text-gray-300 text-xs sm:text-sm">📍 Dakar, Sénégal</p>
-                    <p class="text-gray-300 text-xs sm:text-sm">📧 <a href="mailto:couradiop731@gmail.com" class="hover:text-cyan-400 transition">couradiop731@gmail.com</a></p>
-                    <p class="text-gray-300 text-xs sm:text-sm">📞 <a href="tel:+221781261386" class="hover:text-cyan-400 transition">+221 78 126 13 86</a></p>
-                </div>
-            </div>
-            <hr class="my-4 sm:my-6 border-gray-700">
-            <div class="flex flex-col sm:flex-row justify-between items-center">
-                <div class="flex space-x-3 sm:space-x-4 text-lg sm:text-xl">
-                    <a href="https://www.linkedin.com/in/coura-dieye-diop-3b8958337/" target="_blank" class="text-blue-400 hover:scale-125 transition"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/CuraJoop" target="_blank" class="text-gray-400 hover:scale-125 transition"><i class="fab fa-github"></i></a>
-                    <a href="https://wa.me/781261386" target="_blank" class="text-green-400 hover:scale-125 transition"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://twitter.com/cura" target="_blank" class="text-blue-400 hover:scale-125 transition"><i class="fab fa-twitter"></i></a>
-                    <a href="https://facebook.com/curadiop" target="_blank" class="text-blue-500 hover:scale-125 transition"><i class="fab fa-facebook"></i></a>
-                    <a href="https://instagram.com/coura_dieye_diop" target="_blank" class="text-pink-400 hover:scale-125 transition"><i class="fab fa-instagram"></i></a>
-                </div>
-                <a href="#" class="text-cyan-400 hover:text-cyan-300 transition text-xs sm:text-sm flex items-center mt-4 sm:mt-0"><i class="fas fa-arrow-up mr-2"></i> Retour en haut</a>
-            </div>
-        </div>
-    </footer>
+    </div>
+</footer>
 
     <script src="script.js"></script>
 </body>

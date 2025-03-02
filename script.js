@@ -1,4 +1,9 @@
-
+// Menu burger toggle
+document.getElementById('menu-toggle').addEventListener('click', () => {
+    const navMenu = document.getElementById('nav-menu');
+    navMenu.classList.toggle('hidden');
+    navMenu.classList.toggle('open');
+});
 
 // Animation de défilement pour les formations
 document.addEventListener('scroll', () => {
@@ -125,6 +130,7 @@ document.addEventListener('scroll', () => {
         }
     });
 });
+
 // Animation pour les expériences
 document.addEventListener('scroll', () => {
     const experienceItems = document.querySelectorAll('.experience-item');
