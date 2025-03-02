@@ -1,21 +1,4 @@
-// Menu burger toggle amélioré avec sidebar
-document.getElementById('menu-toggle').addEventListener('click', () => {
-    const navMenu = document.getElementById('nav-menu');
-    const menuIcon = document.querySelector('.menu-icon');
-    const closeIcon = document.querySelector('.close-icon');
 
-    // Toggle classe open pour afficher ou cacher le menu
-    navMenu.classList.toggle('open');
-
-    // Switch entre icône burger et croix
-    if (navMenu.classList.contains('open')) {
-        menuIcon.classList.add('hidden');
-        closeIcon.classList.remove('hidden');
-    } else {
-        menuIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-    }
-});
 
 // Animation de défilement pour les formations
 document.addEventListener('scroll', () => {
@@ -142,7 +125,6 @@ document.addEventListener('scroll', () => {
         }
     });
 });
-
 // Animation pour les expériences
 document.addEventListener('scroll', () => {
     const experienceItems = document.querySelectorAll('.experience-item');
