@@ -7,24 +7,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
-    <style>
-        /* Effet de tremblement pour la page */
-        .shake {
-            animation: shake 0.1s ease-in-out;
-        }
-        @keyframes shake {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-2px); }
-            50% { transform: translateX(2px); }
-            75% { transform: translateX(-2px); }
-            100% { transform: translateX(0); }
-        }
-    </style>
+    
 </head>
 <body class="bg-gray-900 text-white relative overflow-x-hidden">
     <canvas id="backgroundCanvas" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
-
-    <!-- Barre de navigation -->
+                                    <!-- Header -->
     <header class="bg-gray-800 shadow-lg fixed w-full top-0 left-0 z-20">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold text-cyan-400 hover:text-cyan-300 transition">COURA D. DIOP</h1>
@@ -40,20 +27,17 @@
             </nav>
         </div>
     </header>
+                                    <!-- Acceuil -->
     <main class="container mx-auto px-4 sm:px-6 py-12 sm:py-16 flex flex-col md:flex-row items-center justify-between gap-8 sm:gap-12 relative z-10  overflow-hidden">
-        <!-- Image avec animation améliorée -->
         <div class="relative w-44 sm:w-64 md:w-96 group">
             <img 
-                src="images/curaa.png" 
+                src="images/cdd.jpg" 
                 alt="Photo de Coura Dieye Diop" 
                 class="w-full h-auto rounded-full shadow-xl transform transition-all duration-700 hover:scale-110 hover:shadow-cyan-500/70 animate-[float_3s_ease-in-out_infinite] parallax-img"
             >
             <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-cyan-400/50 transition-all duration-500 ease-in-out animate-[spin_4s_linear_infinite_paused] group-hover:animate-[spin_4s_linear_infinite]"></div>
         </div>
-        
-        <!-- Contenu texte -->
         <div class="flex flex-col space-y-6 text-center md:text-left animate-[fadeInUp_1s_ease-out_forwards] delay-200 max-w-2xl">
-            <!-- Titre et description -->
             <div>
                 <h2 class="text-3xl sm:text-5xl font-extrabold text-cyan-400 tracking-tight leading-tight drop-shadow-md transition-all duration-300 hover:text-cyan-300">
                     Je suis Coura Dieye Diop
@@ -62,8 +46,6 @@
                     Développeuse full stack passionnée par l’innovation et la création d’expériences numériques interactives et performantes.
                 </p>
             </div>
-    
-            <!-- Bouton CV avec fond ajusté à la longueur du texte -->
             <a 
                 href="cv.pdf" 
                 download 
@@ -71,11 +53,8 @@
             >
                 <i class="fas fa-download transition-transform duration-300 group-hover:animate-[bounce_0.5s_ease-in-out]"></i>
                 <span class="font-medium text-sm">Télécharger mon CV</span>
-                <!-- Glow pulsé -->
                 <span class="absolute inset-0 rounded-full bg-cyan-400/20 opacity-0 group-hover:opacity-100 animate-[pulse_2s_infinite]"></span>
             </a>
-    
-            <!-- Réseaux sociaux améliorés -->
             <div class="flex flex-wrap justify-center md:justify-start gap-5 sm:gap-7 text-2xl sm:text-3xl">
                 <a href="https://www.linkedin.com/in/coura-dieye-diop-3b8958337/" target="_blank" aria-label="LinkedIn" class="text-blue-600 hover:scale-125 hover:text-blue-500 transition-all duration-300 transform hover:-translate-y-1 group relative">
                     <i class="fab fa-linkedin"></i>
@@ -100,48 +79,9 @@
             </div>
         </div>
     </main>
-    
-    <!-- CSS personnalisé pour animations -->
-    <style>
-        .animate-fade-in-up {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-        .delay-200 {
-            animation-delay: 0.3s;
-        }
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 0; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.1); }
-        }
-        .parallax-img {
-            transform: translateZ(20px);
-            will-change: transform;
-        }
-    </style>
-    <!-- Formations -->
+                                             <!-- Mes formations -->
     <section id="formations" class="container mx-auto px-6 py-16 relative z-10">
         <h2 class="text-4xl font-bold text-center mb-12 text-cyan-400">🎓 Mes Formations</h2>
-        <!-- Ajout du GIF -->
         <div class="flex justify-center mb-8">
             <img src="images/graduation hats.gif" alt="GIF d'éducation" class="w-32 h-32 object-cover rounded-lg">
         </div>
@@ -227,75 +167,72 @@
             </div>
         </div>
     </section>
+                                <!-- Mes compétences -->
+    <section id="competences" class="container mx-auto px-6 py-16 relative z-10">
+        <h2 class="text-4xl font-bold text-center mb-12 text-cyan-400 animate-bounce">🚀 Mes Compétences</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg transform transition duration-500 hover:shadow-cyan-500/50 hover:-translate-y-2">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-html5 text-3xl text-orange-500 mr-3"></i>
+                    <h3 class="text-xl font-semibold text-white">Développement Web</h3>
+                </div>
+                <p class="text-gray-400 mb-2">Création de sites modernes et responsives.</p>
+                <p class="text-cyan-400 text-sm mb-4">HTML, CSS, JavaScript, Tailwind CSS, React, Bootstrap</p>
+                <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+                    <div class="bg-orange-500 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 0%;" data-width="95%"></div>
+                </div>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg transform transition duration-500 hover:shadow-cyan-500/50 hover:-translate-y-2">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-code text-3xl text-green-500 mr-3"></i>
+                    <h3 class="text-xl font-semibold text-white">Programmation</h3>
+                </div>
+                <p class="text-gray-400 mb-2">Développement d'algorithmes et logique.</p>
+                <p class="text-cyan-400 text-sm mb-4">Python, C, Java, TypeScript, JavaScript</p>
+                <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+                    <div class="bg-green-500 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 0%;" data-width="75%"></div>
+                </div>
+            </div>
+            <!-- Outils & Logiciels -->
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg transform transition duration-500 hover:shadow-cyan-500/50 hover:-translate-y-2">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-tools text-3xl text-yellow-500 mr-3"></i>
+                    <h3 class="text-xl font-semibold text-white">Outils & Logiciels</h3>
+                </div>
+                <p class="text-gray-400 mb-2">Maîtrise des environnements de développement.</p>
+                <p class="text-cyan-400 text-sm mb-4">VS Code, WordPress, Git, GitHub, PyCharm, XAMPP, WAMP</p>
+                <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+                    <div class="bg-yellow-500 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 0%;" data-width="85%"></div>
+                </div>
+            </div>
+            <!-- Systèmes d'exploitation -->
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg transform transition duration-500 hover:shadow-cyan-500/50 hover:-translate-y-2">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-laptop text-3xl text-purple-500 mr-3"></i>
+                    <h3 class="text-xl font-semibold text-white">Systèmes d'exploitation</h3>
+                </div>
+                <p class="text-gray-400 mb-2">Gestion et configuration des OS.</p>
+                <p class="text-cyan-400 text-sm mb-4">Windows, Linux</p>
+                <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+                    <div class="bg-purple-500 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 0%;" data-width="80%"></div>
+                </div>
+            </div>
+            <!-- Soft Skills -->
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg transform transition duration-500 hover:shadow-cyan-500/50 hover:-translate-y-2">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-users text-3xl text-pink-500 mr-3"></i>
+                    <h3 class="text-xl font-semibold text-white">Soft Skills</h3>
+                </div>
+                <p class="text-gray-400 mb-2">Compétences humaines essentielles.</p>
+                <p class="text-cyan-400 text-sm mb-4">Autonomie, Créativité, Travail d'équipe</p>
+                <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+                    <div class="bg-pink-500 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 0%;" data-width="90%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Compétences -->
-<section id="competences" class="container mx-auto px-6 py-16 relative z-10">
-    <h2 class="text-4xl font-bold text-center mb-12 text-cyan-400 animate-bounce">🚀 Mes Compétences</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <!-- Développement Web -->
-        <div class="bg-gray-800 p-6 rounded-xl shadow-lg transform transition duration-500 hover:shadow-cyan-500/50 hover:-translate-y-2">
-            <div class="flex items-center mb-4">
-                <i class="fas fa-html5 text-3xl text-orange-500 mr-3"></i>
-                <h3 class="text-xl font-semibold text-white">Développement Web</h3>
-            </div>
-            <p class="text-gray-400 mb-2">Création de sites modernes et responsives.</p>
-            <p class="text-cyan-400 text-sm mb-4">HTML, CSS, JavaScript, Tailwind CSS, React, Bootstrap</p>
-            <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
-                <div class="bg-orange-500 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 0%;" data-width="95%"></div>
-            </div>
-        </div>
-        <!-- Programmation -->
-        <div class="bg-gray-800 p-6 rounded-xl shadow-lg transform transition duration-500 hover:shadow-cyan-500/50 hover:-translate-y-2">
-            <div class="flex items-center mb-4">
-                <i class="fas fa-code text-3xl text-green-500 mr-3"></i>
-                <h3 class="text-xl font-semibold text-white">Programmation</h3>
-            </div>
-            <p class="text-gray-400 mb-2">Développement d'algorithmes et logique.</p>
-            <p class="text-cyan-400 text-sm mb-4">Python, C, Java, TypeScript, JavaScript</p>
-            <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
-                <div class="bg-green-500 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 0%;" data-width="75%"></div>
-            </div>
-        </div>
-        <!-- Outils & Logiciels -->
-        <div class="bg-gray-800 p-6 rounded-xl shadow-lg transform transition duration-500 hover:shadow-cyan-500/50 hover:-translate-y-2">
-            <div class="flex items-center mb-4">
-                <i class="fas fa-tools text-3xl text-yellow-500 mr-3"></i>
-                <h3 class="text-xl font-semibold text-white">Outils & Logiciels</h3>
-            </div>
-            <p class="text-gray-400 mb-2">Maîtrise des environnements de développement.</p>
-            <p class="text-cyan-400 text-sm mb-4">VS Code, WordPress, Git, GitHub, PyCharm, XAMPP, WAMP</p>
-            <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
-                <div class="bg-yellow-500 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 0%;" data-width="85%"></div>
-            </div>
-        </div>
-        <!-- Systèmes d'exploitation -->
-        <div class="bg-gray-800 p-6 rounded-xl shadow-lg transform transition duration-500 hover:shadow-cyan-500/50 hover:-translate-y-2">
-            <div class="flex items-center mb-4">
-                <i class="fas fa-laptop text-3xl text-purple-500 mr-3"></i>
-                <h3 class="text-xl font-semibold text-white">Systèmes d'exploitation</h3>
-            </div>
-            <p class="text-gray-400 mb-2">Gestion et configuration des OS.</p>
-            <p class="text-cyan-400 text-sm mb-4">Windows, Linux</p>
-            <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
-                <div class="bg-purple-500 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 0%;" data-width="80%"></div>
-            </div>
-        </div>
-        <!-- Soft Skills -->
-        <div class="bg-gray-800 p-6 rounded-xl shadow-lg transform transition duration-500 hover:shadow-cyan-500/50 hover:-translate-y-2">
-            <div class="flex items-center mb-4">
-                <i class="fas fa-users text-3xl text-pink-500 mr-3"></i>
-                <h3 class="text-xl font-semibold text-white">Soft Skills</h3>
-            </div>
-            <p class="text-gray-400 mb-2">Compétences humaines essentielles.</p>
-            <p class="text-cyan-400 text-sm mb-4">Autonomie, Créativité, Travail d'équipe</p>
-            <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
-                <div class="bg-pink-500 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 0%;" data-width="90%"></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Services -->
+                                        <!-- Services -->
     <section id="services" class="container mx-auto px-6 py-16 relative z-10">
         <h2 class="text-4xl font-bold text-center mb-12 text-cyan-400">💼 Mes Services</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -350,7 +287,7 @@
         </div>
     </section>
 
-    <!-- Projets -->
+                                            <!--Mes Projets -->
     <section id="projets" class="container mx-auto px-6 py-16 relative z-10">
         <h2 class="text-4xl font-bold text-center mb-12 text-cyan-400">🎯 Mes Projets Réalisés</h2>
         <div class="flex justify-center mb-8 space-x-4">
@@ -471,156 +408,155 @@
         </div>
     </section>
 
-    <!-- Expériences -->
-<section id="experiences" class="container mx-auto px-6 py-16 relative z-10">
-    <h2 class="text-4xl font-bold text-center mb-12 text-cyan-400 animate-bounce">💼 Expérience Professionnelle</h2>
-    <div class="relative border-l-4 border-cyan-500 ml-6 space-y-12">
-        <!-- Expérience 1 -->
-        <div class="relative ml-8 bg-gray-800 p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50 experience-item opacity-0 translate-y-12">
-            <div class="absolute -left-9 w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg animate-pulse">📌</div>
-            <h3 class="text-2xl font-semibold text-white">Stagiaire - TGI, Dakar</h3>
-            <span class="text-gray-400 block text-sm">09 Sept. 2024 – 04 Oct. 2024</span>
-            <p class="text-gray-300 mt-3 italic">Entreprise spécialisée en maintenance informatique et solutions numériques</p>
-            <ul class="text-gray-300 mt-3 space-y-2 list-none">
-                <li class="flex items-start">
-                    <span class="text-cyan-400 mr-2">➤</span>
-                    <span>Maintenance d’iMac : diagnostic précis et remplacement de composants défectueux, réduisant les temps d'arrêt.</span>
-                </li>
-                <li class="flex items-start">
-                    <span class="text-cyan-400 mr-2">➤</span>
-                    <span>Développement d’un site e-commerce (CDD SHOP) avec WordPress, intégrant un design responsive.</span>
-                </li>
-                <li class="flex items-start">
-                    <span class="text-cyan-400 mr-2">➤</span>
-                    <span>Installation et configuration de systèmes Windows/Linux pour optimiser les performances.</span>
-                </li>
-                <li class="flex items-start">
-                    <span class="text-cyan-400 mr-2">➤</span>
-                    <span>Conception d’affiches professionnelles avec Adobe Photoshop pour des campagnes internes.</span>
-                </li>
-                <li class="flex items-start">
-                    <span class="text-cyan-400 mr-2">➤</span>
-                    <span>Clonage et sauvegarde de disques avec Clonezilla, sécurisant les données critiques.</span>
-                </li>
-            </ul>
+                                                <!-- Expériences -->
+    <section id="experiences" class="container mx-auto px-6 py-16 relative z-10">
+        <h2 class="text-4xl font-bold text-center mb-12 text-cyan-400 animate-bounce">💼 Expérience Professionnelle</h2>
+        <div class="relative border-l-4 border-cyan-500 ml-6 space-y-12">
+            <!-- Expérience -->
+            <div class="relative ml-8 bg-gray-800 p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50 experience-item opacity-0 translate-y-12">
+                <div class="absolute -left-9 w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg animate-pulse">📌</div>
+                <h3 class="text-2xl font-semibold text-white">Stagiaire - TGI, Dakar</h3>
+                <span class="text-gray-400 block text-sm">09 Sept. 2024 – 04 Oct. 2024</span>
+                <p class="text-gray-300 mt-3 italic">Entreprise spécialisée en maintenance informatique et solutions numériques</p>
+                <ul class="text-gray-300 mt-3 space-y-2 list-none">
+                    <li class="flex items-start">
+                        <span class="text-cyan-400 mr-2">➤</span>
+                        <span>Maintenance d’iMac : diagnostic précis et remplacement de composants défectueux, réduisant les temps d'arrêt.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-cyan-400 mr-2">➤</span>
+                        <span>Développement d’un site e-commerce (CDD SHOP) avec WordPress, intégrant un design responsive.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-cyan-400 mr-2">➤</span>
+                        <span>Installation et configuration de systèmes Windows/Linux pour optimiser les performances.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-cyan-400 mr-2">➤</span>
+                        <span>Conception d’affiches professionnelles avec Adobe Photoshop pour des campagnes internes.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-cyan-400 mr-2">➤</span>
+                        <span>Clonage et sauvegarde de disques avec Clonezilla, sécurisant les données critiques.</span>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</section>
-
+    </section>
  
-<!-- Objectifs -->
-<section id="objectifs" class="container mx-auto px-6 py-16 relative z-10">
-    <h2 class="text-4xl font-bold text-center mb-12 text-cyan-400 animate-bounce">🎯 Objectifs et Ambitions</h2>
-    <p class="text-center text-gray-300 max-w-2xl mx-auto mb-8">Mon ambition est d’exceller en informatique tout en contribuant à des solutions technologiques innovantes.</p>
-    <div class="space-y-6 max-w-3xl mx-auto">
-        <div class="flex items-center space-x-4 bg-gray-800 p-5 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50 objectif-item opacity-0 -translate-x-12">
-            <span class="text-cyan-500 text-3xl transition-transform duration-300 hover:scale-125">🚀</span>
-            <div>
-                <h3 class="text-lg font-semibold text-white">Maîtrise avancée du développement frontend</h3>
-                <p class="text-gray-300">Approfondir React et Angular pour créer des applications web performantes d’ici fin 2025.</p>
-            </div>
-        </div>
-        <div class="flex items-center space-x-4 bg-gray-800 p-5 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50 objectif-item opacity-0 translate-x-12">
-            <span class="text-cyan-500 text-3xl transition-transform duration-300 hover:scale-125">🌍</span>
-            <div>
-                <h3 class="text-lg font-semibold text-white">Contribution open-source</h3>
-                <p class="text-gray-300">Participer à 3 projets open-source majeurs d’ici 2026 pour renforcer mes compétences collaboratives.</p>
-            </div>
-        </div>
-        <div class="flex items-center space-x-4 bg-gray-800 p-5 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50 objectif-item opacity-0 -translate-x-12">
-            <span class="text-cyan-500 text-3xl transition-transform duration-300 hover:scale-125">🏢</span>
-            <div>
-                <h3 class="text-lg font-semibold text-white">Intégration professionnelle</h3>
-                <p class="text-gray-300">Rejoindre une entreprise tech innovante en tant que développeuse junior d’ici mi-2025.</p>
-            </div>
-        </div>
-        <div class="flex items-center space-x-4 bg-gray-800 p-5 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50 objectif-item opacity-0 translate-x-12">
-            <span class="text-cyan-500 text-3xl transition-transform duration-300 hover:scale-125">📚</span>
-            <div>
-                <h3 class="text-lg font-semibold text-white">Certification Cloud</h3>
-                <p class="text-gray-300">Obtenir une certification AWS ou Google Cloud d’ici 2026 pour élargir mon expertise.</p>
-            </div>
-        </div>
-        <div class="flex items-center space-x-4 bg-gray-800 p-5 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50 objectif-item opacity-0 -translate-x-12">
-            <span class="text-cyan-500 text-3xl transition-transform duration-300 hover:scale-125">🎓</span>
-            <div>
-                <h3 class="text-lg font-semibold text-white">Mentorat</h3>
-                <p class="text-gray-300">Devenir mentor pour guider les étudiants en informatique d’ici 2027.</p>
-            </div>
-        </div>
-    </div>
-</section>
-    <!-- Contact -->
-<section id="contact" class="container mx-auto px-6 py-16 relative z-10 ">
-    <h2 class="text-4xl font-extrabold text-center mb-12 text-cyan-400 tracking-tight animate-pulse">📞 Contactez-moi</h2>
-    <div class="flex flex-col md:flex-row items-start justify-between max-w-4xl mx-auto gap-8">
-        <!-- Informations de contact -->
-        <div class="md:w-1/2 space-y-6 text-gray-300">
-            <p class="bg-gray-800 p-4 rounded-xl shadow-md text-center text-lg font-medium transition duration-300 hover:bg-gray-700">
-                Ouverte aux opportunités de travail, stage ou collaboration.
-            </p>
-            <div class="flex items-center bg-gray-800 p-4 rounded-xl shadow-md transition duration-300 hover:bg-gray-700">
-                <span class="text-cyan-400 text-2xl mr-3"><i class="fas fa-user"></i></span>
-                <p><strong>Nom :</strong> Coura Dieye Diop</p>
-            </div>
-            <div class="flex items-center bg-gray-800 p-4 rounded-xl shadow-md transition duration-300 hover:bg-gray-700">
-                <span class="text-cyan-400 text-2xl mr-3"><i class="fas fa-envelope"></i></span>
-                <p><strong>Email :</strong> <a href="mailto:couradiop731@gmail.com" class="text-cyan-400 hover:text-cyan-300 transition duration-200">couradiop731@gmail.com</a></p>
-            </div>
-            
-            <div class="flex items-center bg-gray-800 p-4 rounded-xl shadow-md transition duration-300 hover:bg-gray-700">
-                <span class="text-cyan-400 text-2xl mr-3"><i class="fas fa-map-marker-alt"></i></span>
-                <p><strong>Localisation :</strong> Dakar, Guédiawaye, Gadaye</p>
-            </div>
-        </div>
-        <!-- Formulaire de contact -->
-        <div class="md:w-1/2 bg-gray-800 p-8 rounded-xl shadow-lg text-white transition duration-300 hover:shadow-cyan-500/50">
-            <form action="#" method="POST" class="space-y-6">
+                                        <!-- Objectifs -->
+    <section id="objectifs" class="container mx-auto px-6 py-16 relative z-10">
+        <h2 class="text-4xl font-bold text-center mb-12 text-cyan-400 animate-bounce">🎯 Objectifs et Ambitions</h2>
+        <p class="text-center text-gray-300 max-w-2xl mx-auto mb-8">Mon ambition est d’exceller en informatique tout en contribuant à des solutions technologiques innovantes.</p>
+        <div class="space-y-6 max-w-3xl mx-auto">
+            <div class="flex items-center space-x-4 bg-gray-800 p-5 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50 objectif-item opacity-0 -translate-x-12">
+                <span class="text-cyan-500 text-3xl transition-transform duration-300 hover:scale-125">🚀</span>
                 <div>
-                    <label for="name" class="block font-medium mb-2 text-gray-200">Nom</label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        required
-                        class="w-full px-4 py-3 rounded-lg bg-gray-700 text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition duration-200 placeholder-gray-500"
-                        placeholder="Entrez votre nom"
-                    />
+                    <h3 class="text-lg font-semibold text-white">Maîtrise avancée du développement frontend</h3>
+                    <p class="text-gray-300">Approfondir React et Angular pour créer des applications web performantes d’ici fin 2025.</p>
                 </div>
+            </div>
+            <div class="flex items-center space-x-4 bg-gray-800 p-5 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50 objectif-item opacity-0 translate-x-12">
+                <span class="text-cyan-500 text-3xl transition-transform duration-300 hover:scale-125">🌍</span>
                 <div>
-                    <label for="email" class="block font-medium mb-2 text-gray-200">Email</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        class="w-full px-4 py-3 rounded-lg bg-gray-700 text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition duration-200 placeholder-gray-500"
-                        placeholder="Entrez votre email"
-                    />
+                    <h3 class="text-lg font-semibold text-white">Contribution open-source</h3>
+                    <p class="text-gray-300">Participer à 3 projets open-source majeurs d’ici 2026 pour renforcer mes compétences collaboratives.</p>
                 </div>
+            </div>
+            <div class="flex items-center space-x-4 bg-gray-800 p-5 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50 objectif-item opacity-0 -translate-x-12">
+                <span class="text-cyan-500 text-3xl transition-transform duration-300 hover:scale-125">🏢</span>
                 <div>
-                    <label for="message" class="block font-medium mb-2 text-gray-200">Message</label>
-                    <textarea
-                        id="message"
-                        name="message"
-                        rows="5"
-                        required
-                        class="w-full px-4 py-3 rounded-lg bg-gray-700 text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition duration-200 placeholder-gray-500"
-                        placeholder="Écrivez votre message ici..."
-                    ></textarea>
+                    <h3 class="text-lg font-semibold text-white">Intégration professionnelle</h3>
+                    <p class="text-gray-300">Rejoindre une entreprise tech innovante en tant que développeuse junior d’ici mi-2025.</p>
                 </div>
-                <button
-                    type="submit"
-                    class="w-full bg-cyan-600 text-white py-3 rounded-lg font-semibold text-lg hover:bg-cyan-700 transition duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2"
-                >
-                    Envoyer <i class="fas fa-paper-plane"></i>
-                </button>
-            </form>
+            </div>
+            <div class="flex items-center space-x-4 bg-gray-800 p-5 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50 objectif-item opacity-0 translate-x-12">
+                <span class="text-cyan-500 text-3xl transition-transform duration-300 hover:scale-125">📚</span>
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Certification Cloud</h3>
+                    <p class="text-gray-300">Obtenir une certification AWS ou Google Cloud d’ici 2026 pour élargir mon expertise.</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4 bg-gray-800 p-5 rounded-lg shadow-lg transition duration-300 hover:shadow-cyan-500/50 objectif-item opacity-0 -translate-x-12">
+                <span class="text-cyan-500 text-3xl transition-transform duration-300 hover:scale-125">🎓</span>
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Mentorat</h3>
+                    <p class="text-gray-300">Devenir mentor pour guider les étudiants en informatique d’ici 2027.</p>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+                                                 <!-- Contact -->
+    <section id="contact" class="container mx-auto px-6 py-16 relative z-10 ">
+        <h2 class="text-4xl font-extrabold text-center mb-12 text-cyan-400 tracking-tight animate-pulse">📞 Contactez-moi</h2>
+        <div class="flex flex-col md:flex-row items-start justify-between max-w-4xl mx-auto gap-8">
+            <!-- Informations de contact -->
+            <div class="md:w-1/2 space-y-6 text-gray-300">
+                <p class="bg-gray-800 p-4 rounded-xl shadow-md text-center text-lg font-medium transition duration-300 hover:bg-gray-700">
+                    Ouverte aux opportunités de travail, stage ou collaboration.
+                </p>
+                <div class="flex items-center bg-gray-800 p-4 rounded-xl shadow-md transition duration-300 hover:bg-gray-700">
+                    <span class="text-cyan-400 text-2xl mr-3"><i class="fas fa-user"></i></span>
+                    <p><strong>Nom :</strong> Coura Dieye Diop</p>
+                </div>
+                <div class="flex items-center bg-gray-800 p-4 rounded-xl shadow-md transition duration-300 hover:bg-gray-700">
+                    <span class="text-cyan-400 text-2xl mr-3"><i class="fas fa-envelope"></i></span>
+                    <p><strong>Email :</strong> <a href="mailto:couradiop731@gmail.com" class="text-cyan-400 hover:text-cyan-300 transition duration-200">couradiop731@gmail.com</a></p>
+                </div>
+                
+                <div class="flex items-center bg-gray-800 p-4 rounded-xl shadow-md transition duration-300 hover:bg-gray-700">
+                    <span class="text-cyan-400 text-2xl mr-3"><i class="fas fa-map-marker-alt"></i></span>
+                    <p><strong>Localisation :</strong> Dakar, Guédiawaye, Gadaye</p>
+                </div>
+            </div>
+            <!-- Formulaire de contact -->
+            <div class="md:w-1/2 bg-gray-800 p-8 rounded-xl shadow-lg text-white transition duration-300 hover:shadow-cyan-500/50">
+                <form action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block font-medium mb-2 text-gray-200">Nom</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                            class="w-full px-4 py-3 rounded-lg bg-gray-700 text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition duration-200 placeholder-gray-500"
+                            placeholder="Entrez votre nom"
+                        />
+                    </div>
+                    <div>
+                        <label for="email" class="block font-medium mb-2 text-gray-200">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            class="w-full px-4 py-3 rounded-lg bg-gray-700 text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition duration-200 placeholder-gray-500"
+                            placeholder="Entrez votre email"
+                        />
+                    </div>
+                    <div>
+                        <label for="message" class="block font-medium mb-2 text-gray-200">Message</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="5"
+                            required
+                            class="w-full px-4 py-3 rounded-lg bg-gray-700 text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition duration-200 placeholder-gray-500"
+                            placeholder="Écrivez votre message ici..."
+                        ></textarea>
+                    </div>
+                    <button
+                        type="submit"
+                        class="w-full bg-cyan-600 text-white py-3 rounded-lg font-semibold text-lg hover:bg-cyan-700 transition duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+                    >
+                        Envoyer <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-    <!-- Pied de page -->
+                                     <!-- Pied de page -->
     <footer class="bg-gray-800 text-white py-10 relative z-10">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -663,6 +599,55 @@
             </div>
         </div>
     </footer>
+    <style>
+        /* Effet de tremblement pour la page */
+        .shake {
+            animation: shake 0.1s ease-in-out;
+        }
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-2px); }
+            50% { transform: translateX(2px); }
+            75% { transform: translateX(-2px); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+    <style>
+        .animate-fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        .delay-200 {
+            animation-delay: 0.3s;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.1); }
+        }
+        .parallax-img {
+            transform: translateZ(20px);
+            will-change: transform;
+        }
+    </style>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,5 +1,3 @@
-
-
 // Animation de défilement pour les formations
 document.addEventListener('scroll', () => {
     const formationItems = document.querySelectorAll('.formation-item');
