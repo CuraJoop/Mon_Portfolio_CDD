@@ -64,14 +64,7 @@
                     <i class="fab fa-github"></i>
                     <span class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-800 text-white text-xs rounded px-2 py-1">GitHub</span>
                 </a>
-                <a href="https://twitter.com/cura" target="_blank" aria-label="Twitter" class="text-blue-400 hover:scale-125 hover:text-blue-300 transition-all duration-300 transform hover:-translate-y-1 group relative">
-                    <i class="fab fa-twitter"></i>
-                    <span class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-800 text-white text-xs rounded px-2 py-1">Twitter</span>
-                </a>
-                <a href="https://facebook.com/curadiop" target="_blank" aria-label="Facebook" class="text-blue-600 hover:scale-125 hover:text-blue-500 transition-all duration-300 transform hover:-translate-y-1 group relative">
-                    <i class="fab fa-facebook"></i>
-                    <span class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-800 text-white text-xs rounded px-2 py-1">Facebook</span>
-                </a>
+               
                 <a href="https://instagram.com/coura_dieye_diop" target="_blank" aria-label="Instagram" class="text-pink-500 hover:scale-125 hover:text-pink-400 transition-all duration-300 transform hover:-translate-y-1 group relative">
                     <i class="fab fa-instagram"></i>
                     <span class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-800 text-white text-xs rounded px-2 py-1">Instagram</span>
@@ -288,7 +281,7 @@
     </section>
 
                                             <!--Mes Projets -->
-    <section id="projets" class="container mx-auto px-6 py-16 relative z-10">
+  <section id="projets" class="container mx-auto px-6 py-16 relative z-10">
         <h2 class="text-4xl font-bold text-center mb-12 text-cyan-400">🎯 Mes Projets Réalisés</h2>
         <div class="flex justify-center mb-8 space-x-4">
             <button class="filter-btn px-4 py-2 bg-cyan-500 text-white rounded-full hover:bg-cyan-600 transition duration-300 active" data-filter="all">Tout</button>
@@ -296,49 +289,54 @@
             <button class="filter-btn px-4 py-2 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition duration-300" data-filter="backend">Backend</button>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="project-grid">
-            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="frontend">
-                <img src="images/p1.png" alt="Plateforme Immobilière" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105">
+            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 relative project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="frontend">
+                <img src="images/p1.png" alt="Plateforme Immobilière" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105 cursor-pointer project-preview">
+                <div class="absolute inset-0 bg-gray-900/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+                    <p class="text-white text-center text-sm">Une plateforme web permettant la présentation de logements avec un système d'inscription et de recherche intuitive pour les utilisateurs.</p>
+                </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-white">🏡 Plateforme Immobilière</h3>
                     <p class="text-gray-400 mt-2">Présentation de logements avec inscription.</p>
-                    <a href="mactaImo/acceuil.html" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition">Voir plus →</a>
                 </div>
             </div>
             <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 relative project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="fullstack">
                 <img src="images/dekkuwaay.png" alt="Dekkuwwaay - Gestion Immobilière" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105 cursor-pointer project-preview">
                 <div class="absolute inset-0 bg-gray-900/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
-                    <p class="text-white text-center text-sm">
-                        Une application web complète de gestion immobilière : bâtiments, appartements, locataires, loyers, quittances PDF, carte interactive, rendez-vous en ligne, et rôles multiples (admin, agent, client).
-                    </p>
+                    <p class="text-white text-center text-sm">Une application web complète de gestion immobilière : bâtiments, appartements, locataires, loyers, quittances PDF, carte interactive, rendez-vous en ligne, et rôles multiples (admin, agent, client).</p>
                 </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-white">🏢 Dekkuwwaay</h3>
                     <p class="text-gray-400 mt-2">Plateforme immobilière complète et intuitive.</p>
                 </div>
             </div>
-
-            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="backend">
-                <img src="images/P2.png" alt="Calculateur IMC" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105">
+            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 relative project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="backend">
+                <img src="images/P2.png" alt="Calculateur IMC" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105 cursor-pointer project-preview">
+                <div class="absolute inset-0 bg-gray-900/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+                    <p class="text-white text-center text-sm">Une application web simple permettant aux utilisateurs de calculer leur indice de masse corporelle (IMC) en entrant leur poids et leur taille.</p>
+                </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-white">⚖️ Calculateur IMC</h3>
                     <p class="text-gray-400 mt-2">Calcul de l'indice de masse corporelle.</p>
-                    <a href="IMC_Coura Dieye Diop/index.html" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition">Voir plus →</a>
                 </div>
             </div>
-            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="frontend">
-                <img src="images/p3.png" alt="Site de Boulangerie" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105">
+            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 relative project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="frontend">
+                <img src="images/p3.png" alt="Site de Boulangerie" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105 cursor-pointer project-preview">
+                <div class="absolute inset-0 bg-gray-900/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+                    <p class="text-white text-center text-sm">Une vitrine en ligne pour une boulangerie, permettant aux clients de consulter les produits et de passer des commandes en ligne.</p>
+                </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-white">🥐 Site de Boulangerie</h3>
                     <p class="text-gray-400 mt-2">Vitrine avec commande de produits.</p>
-                    <a href="CDD/burger.html" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition">Voir plus →</a>
                 </div>
             </div>
-            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="frontend ">
-                <img src="images/p4.png" alt="Agence de Voyage" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105">
+            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 relative project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="frontend">
+                <img src="images/p4.png" alt="Agence de Voyage" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105 cursor-pointer project-preview">
+                <div class="absolute inset-0 bg-gray-900/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+                    <p class="text-white text-center text-sm">Une plateforme web pour une agence de voyage, offrant des fonctionnalités de réservation de voyages et de consultation d'offres touristiques.</p>
+                </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-white">✈️ Agence de Voyage</h3>
                     <p class="text-gray-400 mt-2">Réservation de voyages.</p>
-                    <a href="Agence de voyage/acceuil.html" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition">Voir plus →</a>
                 </div>
             </div>
             <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 relative project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="backend">
@@ -351,28 +349,34 @@
                     <p class="text-gray-400 mt-2">Gestion des produits et stocks.</p>
                 </div>
             </div>
-            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="frontend">
-                <img src="images/p5.png" alt="Blog sur le Voile" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105">
+            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 relative project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="frontend">
+                <img src="images/p5.png" alt="Blog sur le Voile" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105 cursor-pointer project-preview">
+                <div class="absolute inset-0 bg-gray-900/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+                    <p class="text-white text-center text-sm">Un blog dédié à l'exploration du voile féminin, avec des articles informatifs et une interface utilisateur attrayante.</p>
+                </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-white">🧕 Blog sur le Voile Féminin</h3>
                     <p class="text-gray-400 mt-2">Exploration du voile féminin.</p>
-                    <a href="CDD/monblog.html" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition">Voir plus →</a>
                 </div>
             </div>
-            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="frontend">
-                <img src="images/projet6.png" alt="Portfolio Personnel" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105">
+            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 relative project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="frontend">
+                <img src="images/projet6.png" alt="Portfolio Personnel" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105 cursor-pointer project-preview">
+                <div class="absolute inset-0 bg-gray-900/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+                    <p class="text-white text-center text-sm">Un portfolio personnel mettant en avant mes projets et compétences, conçu avec une interface moderne et interactive.</p>
+                </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-white">💼 Portfolio Personnel</h3>
                     <p class="text-gray-400 mt-2">Présentation de mes projets.</p>
-                    <a href="projets/portfolio.html" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition">Voir plus →</a>
                 </div>
             </div>
-            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="backend">
-                <img src="images/P7.png" alt="Site de Stationnement" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105">
+            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 relative project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="backend">
+                <img src="images/P7.png" alt="Site de Stationnement" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105 cursor-pointer project-preview">
+                <div class="absolute inset-0 bg-gray-900/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+                    <p class="text-white text-center text-sm">Une plateforme intuitive pour gérer et localiser facilement les places de stationnement, avec des fonctionnalités de recherche et de réservation.</p>
+                </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-white">🚗 Stationnement</h3>
-                    <p class="text-gray-400 mt-2">Une plateforme intuitive pour gérer et localiser facilement les places de stationnement.</p>
-                    <a href="stationnement/stationnement/index.html" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition">Voir plus →</a>
+                    <p class="text-gray-400 mt-2">Plateforme pour gérer les places de stationnement.</p>
                 </div>
             </div>
             <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 relative project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="backend">
@@ -395,19 +399,16 @@
                     <p class="text-gray-400 mt-2">Calculatrice simple développée en Python.</p>
                 </div>
             </div>
-            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 relative project-item" 
-                data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="backend">
+            <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 relative project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="backend">
                 <img src="images/unisante.png" alt="UNISANTÉ - Plateforme de Santé" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105 cursor-pointer project-preview">
                 <div class="absolute inset-0 bg-gray-900/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
-                    <p class="text-white text-center text-sm">
-                        Une plateforme innovante développée en React et NestJS, permettant aux patients de prendre des rendez-vous médicaux en ligne et de localiser les pharmacies de garde, avec une gestion sécurisée via JWT et MySQL.
-                    </p>
+                    <p class="text-white text-center text-sm">Une plateforme innovante développée en React et NestJS, permettant aux patients de prendre des rendez-vous médicaux en ligne et de localiser les pharmacies de garde, avec une gestion sécurisée via JWT et MySQL.</p>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white">🏥 UNISANTÉ</h3>
+                    <p class="text-gray-400 mt-2">Plateforme de prise de rendez-vous et localisation de pharmacies.</p>
+                </div>
             </div>
-            <div class="p-6">
-                <h3 class="text-xl font-bold text-white">🏥 UNISANTÉ</h3>
-                <p class="text-gray-400 mt-2">Plateforme de prise de rendez-vous et localisation de pharmacies.</p>
-            </div>
-        </div>
             <div class="tilt bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-opacity duration-300 transform hover:shadow-cyan-500/50 relative project-item" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-category="backend">
                 <img src="images/p11.png" alt="Vérificateur de Nombre Premier" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105 cursor-pointer project-preview">
                 <div class="absolute inset-0 bg-gray-900/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
